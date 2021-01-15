@@ -8,35 +8,75 @@
     <title>Rutenett</title>
     <style>
         div {
-            font-size: 90px;
+            font-size: 5vw;
             text-align: center;
-            padding-top: 35px;
+            padding-top: 2vw;
+            padding-bottom: 2vw;
+            font-family: sans-serif;
+        }
+
+        div #enterPin {
+            font-size: 3vw;
+            font-weight: bold;
+            text-align: center;
+            border: 2px solid black;
+            border-radius: 30px;
         }
 
         .board {
             display: grid;
-            grid-template-columns: repeat(4, 20vmin);
-            grid-template-rows: repeat(4, 20vmin);
+            grid-template-columns: repeat(4, 10vw);
+            grid-template-rows: repeat(4, 10vw);
+            float: left;
+            padding: 1vmin;
+           
+            border: 2px solid black;
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
         }
 
         .light {
-            background-color: lightblue;
-
+            background-color: whitesmoke;
+            border: 2px solid black;
         }
 
         .dark {
-            background-color: lightcoral;
+            background-color: lightgrey;
+            border: 2px solid black;
+        }
 
+        .side {
+            background-color: lightslategrey;
+            
+        }
+
+        #sidepanel {
+            width: 40vw;
+            float: left;
+            padding: 5vmin;
+                        
+        }
+
+        #pinScreen {
+            min-height: 6vw;
+            border: 2px solid black;
+            border-radius: 30px;
+            background-color: lightgrey;
+            margin-top: 1vw;
+            
         }
 
         #resetbutton {
             padding: 0.5rem 2rem;
-            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
             border-radius: 30px;
             cursor: pointer;
             font-weight: bold;
             color: #585858;
+            font-size: 2vw;
+            padding: 2vw 5vw;
         }
+
+     
     </style>
 
 </head>
@@ -46,27 +86,30 @@
         <div id="a1" class="light" onclick="kopierTall(this)">1</div>
         <div id="a2" class="dark" onclick="kopierTall(this)">2</div>
         <div id="a3" class="light" onclick="kopierTall(this)">3</div>
-        <div id="un1" class="dark">🦄</div>
+        <div id="un1" class="side">🦄</div>
         <div id="a4" class="dark" onclick="kopierTall(this)">4</div>
         <div id="a5" class="light" onclick="kopierTall(this)">5</div>
         <div id="a6" class="dark" onclick="kopierTall(this)">6</div>
-        <div id="un2" class="light">🦄</div>
+        <div id="un2" class="side">🦄</div>
         <div id="a7" class="light" onclick="kopierTall(this)">7</div>
         <div id="a8" class="dark" onclick="kopierTall(this)">8</div>
         <div id="a9" class="light" onclick="kopierTall(this)">9</div>
-        <div id="un3" class="dark">🦄</div>
+        <div id="un3" class="side">🦄</div>
         <div id="stjerne" class="dark" onclick="kopierTall(this)">*</div>
         <div id="a0" class="light" onclick="kopierTall(this)">0</div>
         <div id="firkant" class="dark" onclick="kopierTall(this)">#</div>
-        <div id="un4" class="light">🦄</div>
+        <div id="un4" class="side">🦄</div>
     </div>
+    
+    <div id= sidepanel>
+        <div id="enterPin" class="dark">Enter Pin Code:</div>
+        
+        <div id="pinScreen"></div>
 
-    <div id="enterPin" class="dark">Enter Pin Code:</div>
-    <button id="resetbutton" onclick=" location.reload()">Reset</button>
-
-
-    <div id="pinScreen" class="dark"></div>
-
+        <div id="buttonSize">
+            <button id="resetbutton" onclick=" location.reload()">Reset</button>
+        </div>   
+    </div>
 
     <script>
         function kopierTall(kT) {
