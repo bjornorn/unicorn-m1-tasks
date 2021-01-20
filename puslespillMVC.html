@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      #brett {
+        background-color: blue;
+        height: 400px;
+        width: 500px;
+        float: left;
+      }
+
+      #pusleboks1 {
+        background-color: grey;
+        height: 400px;
+        width: 200px;
+        float: left;
+      }
+      #pusleboks2 {
+        background-color: grey;
+        height: 400px;
+        width: 200px;
+        float: left;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="app"></div>
+
+    <script>
+      // model
+
+      // controller
+
+      // view
+      updateView();
+      function updateView() {
+        document.getElementById('app').innerHTML = `
+            <div id="pusleboks1">Puslebrikker skal ligge inne i denne</div>
+            <div id="brett"></div>
+            <div id="ramme"></div>
+            <div id="pusleboks2">Puslebrikker skal ligge inne i denne</div>
+                `;
+      }
+    </script>
+  </body>
+</html>
