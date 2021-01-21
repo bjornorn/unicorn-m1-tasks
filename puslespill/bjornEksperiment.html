@@ -6,7 +6,7 @@
     <style>
       .page {
         display: grid;
-        grid-template-columns: 100px 194px 194px 250px 10px 150px 150px 150px;
+        grid-template-columns: 100px 194px 194px 250px 100px 150px 150px 150px;
         grid-template-rows: 100px 200px 150px 150px 150px;
         grid-template-areas:
           'r1-1 r1-2 r1-3 r1-4 r1-5 r1-6 r1-7 r1-8'
@@ -24,7 +24,7 @@
       }
 
       #brett {
-        grid-area: r2-6;
+        grid-area: r2-5;
         background-image: url('Brett.png');
         height: 495px;
         width: 700px;
@@ -125,8 +125,6 @@
         height: 173px;
         width: 234px;
       }
-
- 
     </style>
   </head>
 
@@ -135,6 +133,8 @@
 
     <script>
       // model
+      var brikkeValg = 'Velg en brikke';
+      var plassValg = 'Velg en plass';
 
       // view
       updateView();
@@ -163,7 +163,7 @@
               <div id="pusleplass6" class="pusleplasser" onclick="velgPlass(this)"></div>
 
               
-              <div class="info">Du har valgt brikke: ${brikkeValg} </br> og plass: ${plassValg}</div>
+              <div class="info">${brikkeValg} </br> ${plassValg}</div>
 
 
               
@@ -171,41 +171,59 @@
                 `;
       }
       // controller
-      var brikke1 = document.getElementById('puslebit1');
+      const brikke1 = document.getElementById('puslebit1');
+      const brikke2 = document.getElementById('puslebit2');
+      const brikke3 = document.getElementById('puslebit3');
+      const brikke4 = document.getElementById('puslebit4');
+      const brikke5 = document.getElementById('puslebit5');
+      const brikke6 = document.getElementById('puslebit6');
 
-      var plass1 = document.getElementById('pusleplass1');
-      var plass2 = document.getElementById('pusleplass2');
-      var plass3 = document.getElementById('pusleplass3');
-      var plass4 = document.getElementById('pusleplass4');
-      var plass5 = document.getElementById('pusleplass5');
-      var plass6 = document.getElementById('pusleplass6');
-
-      var brikkeValg = '';
-      var plassValg = '';
+      const plass1 = document.getElementById('pusleplass1');
+      const plass2 = document.getElementById('pusleplass2');
+      const plass3 = document.getElementById('pusleplass3');
+      const plass4 = document.getElementById('pusleplass4');
+      const plass5 = document.getElementById('pusleplass5');
+      const plass6 = document.getElementById('pusleplass6');
 
       function velgBrikke(vB) {
         var aktuellBrikke = vB;
-        plass1.style.backgroundColor = 'black';
-        console.log(aktuellBrikke.id);
+
+        // console.log(aktuellBrikke.id);
         brikkeValg = aktuellBrikke.id;
-        updateView();
+
+        brikkeOgPlass();
       }
 
       function velgPlass(vP) {
         var aktuellPlass = vP;
-
-        console.log(aktuellPlass.id);
+        // console.log(aktuellPlass.id);
         plassValg = aktuellPlass.id;
-        updateView();
+
+        brikkeOgPlass();
       }
 
       function brikkeOgPlass() {
-        if (aktuellBrikke);
+        console.log(brikkeValg);
+        console.log(plassValg);
+        if ((brikkeValg == 'puslebit1') & (plassValg == 'pusleplass1')) {
+          brikke1.style.gridArea = 'r2-6';
+        }
+        if ((brikkeValg == 'puslebit2') & (plassValg == 'pusleplass2')) {
+          brikke2.style.gridArea = 'r2-7';
+        }
+        if ((brikkeValg == 'puslebit3') & (plassValg == 'pusleplass3')) {
+          brikke3.style.gridArea = 'r2-8';
+        }
+        if ((brikkeValg == 'puslebit4') & (plassValg == 'pusleplass4')) {
+          brikke4.style.gridArea = 'r3-6';
+        }
+        if ((brikkeValg == 'puslebit5') & (plassValg == 'pusleplass5')) {
+          brikke5.style.gridArea = 'r3-7';
+        }
+        if ((brikkeValg == 'puslebit6') & (plassValg == 'pusleplass6')) {
+          brikke6.style.gridArea = 'r3-8';
+        }
       }
     </script>
   </body>
 </html>
-
-<!-- updateView(); -->
-<!-- document.getElementById("puslebit1").style.backgroundColor = 'red'; -->
-<!-- document.getElementById("puslebit1").style.backgroundColor = 'red'; -->
