@@ -7,50 +7,145 @@
       #pusleboks1 {
         background-color: grey;
         height: 495px;
-        width: 200px;
+        width: 600px;
         margin-top: 10px;
         position: fixed;
         left: 10px;
-        z-index: -3;
       }
 
       #brett {
-        background-image: url('Brett.png');
+        background-image: url("Brett.png");
         height: 495px;
         width: 700px;
         margin-top: 10px;
         position: fixed;
-        left: 220px;
-        z-index: -2;
-      }
-
-      #pusleboks2 {
-        background-color: grey;
-        height: 495px;
-        width: 200px;
-        margin-top: 10px;
-        position: fixed;
-        left: 930px;
+        left: 620px;
         z-index: -1;
       }
 
       #puslebit1 {
-        background-image: url('Unicorn_1.png');
+        background-image: url("Unicorn_1.png");
         height: 189px;
         width: 181px;
-        z-index: 1;
+
+        position: relative;
+        top: 285px;
+        left: 400px;
+        border: dotted;
+      }
+
+      #puslebit2 {
+        background-image: url("Unicorn_2.png");
+        height: 197px;
+        width: 190px;
+
         position: fixed;
-        top: 65px;
+        top: 55px;
+        left: 20px;
+
+        border: dotted;
+      }
+
+      #puslebit3 {
+        background-image: url("Unicorn_3.png");
+        height: 248px;
+        width: 143px;
+        position: fixed;
+        top: 255px;
         left: 30px;
+        border: dotted;
+      }
+
+      #puslebit4 {
+        background-image: url("Unicorn_4.png");
+        height: 230px;
+        width: 194px;
+        z-index: 2;
+        position: fixed;
+        top: 20px;
+        left: 410px;
+        border: dotted;
+      }
+
+      #puslebit5 {
+        background-image: url("Unicorn_5.png");
+        height: 190px;
+        width: 190px;
+
+        position: fixed;
+        top: 285px;
+        left: 195px;
+        border: dotted;
+      }
+
+      #puslebit6 {
+        background-image: url("Unicorn_6.png");
+        height: 173px;
+        width: 234px;
+
+        position: fixed;
+        top: 95px;
+        left: 200px;
+        border: dotted;
       }
 
       #pusleplass1 {
         height: 189px;
         width: 181px;
-        z-index: 1;
+
         position: fixed;
         top: 65px;
-        left: 300px;
+        left: 702px;
+      }
+
+      #pusleplass2 {
+        background-image: url("Unicorn_2.png");
+        height: 197px;
+        width: 190px;
+
+        position: fixed;
+        top: 54px;
+        left: 914px;
+      }
+
+      #pusleplass3 {
+        background-image: url("Unicorn_3.png");
+        height: 248px;
+        width: 143px;
+
+        position: fixed;
+        top: 57px;
+        left: 1135px;
+      }
+
+      #pusleplass4 {
+        background-image: url("Unicorn_4.png");
+        height: 230px;
+        width: 194px;
+
+        position: fixed;
+        top: 243px;
+        left: 666px;
+      }
+
+      #pusleplass5 {
+        background-image: url("Unicorn_5.png");
+        height: 190px;
+        width: 190px;
+
+        position: fixed;
+        top: 278px;
+        left: 855px;
+      }
+
+      #pusleplass6 {
+        background-image: url("Unicorn_6.png");
+        height: 173px;
+        width: 234px;
+
+        position: fixed;
+        top: 302px;
+        left: 1057px;
       }
     </style>
   </head>
@@ -61,21 +156,44 @@
     <script>
       // model
 
-      // controller
-
       // view
       updateView();
       function updateView() {
-        document.getElementById('app').innerHTML = `
-            <div id="pusleboks1">Puslebrikker skal ligge inne i denne
-              
-              </div>
-              
-              <div id="brett"></div>          
-              <div id="pusleboks2">Puslebrikker skal ligge inne i denne</div>
-              <div id="puslebit1"><div>
-              <div id="pusleplass1"><div>
-                `;
+        document.getElementById("app").innerHTML = `
+        <div id="pusleboks1">Puslebrikker skal ligge inne i denne </div>
+        
+        <div id="brett"></div>
+
+        <div id="puslebit1" draggable="true" ondragstart="drag(event)"></div>
+        <div id="puslebit2" draggable="true" ondragstart="drag(event)"></div>
+        <div id="puslebit3" draggable="true" ondragstart="drag(event)"></div>
+        <div id="puslebit4" draggable="true" ondragstart="drag(event)"></div>
+        <div id="puslebit5" draggable="true" ondragstart="drag(event)"></div>
+        <div id="puslebit6" draggable="true" ondragstart="drag(event)"></div>
+
+        <div id="text">
+          <div id="pusleplass1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div id="pusleplass2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div id="pusleplass3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div id="pusleplass4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div id="pusleplass5" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+          <div id="pusleplass6" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        </div>
+
+        
+          `;
+      }
+      // controller
+      function allowDrop(ev) {
+        ev.preventDefault();
+      }
+      function drag(ev) {
+        ev.dataTransfer.setData("brett", ev.target.id);
+      }
+      function drop(ev) {
+        ev.preventDefault();
+        var data = ev.dataTransfer.getData("brett");
+        ev.target.appendChild(document.getElementById(data));
       }
     </script>
   </body>
