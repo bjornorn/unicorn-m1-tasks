@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      #pusleboks1 {
+        background-color: grey;
+        height: 495px;
+        width: 200px;
+        margin-top: 10px;
+        position: fixed;
+        left: 10px;
+        z-index: -3;
+      }
+
+      #brett {
+        background-image: url('Brett.png');
+        height: 495px;
+        width: 700px;
+        margin-top: 10px;
+        position: fixed;
+        left: 220px;
+        z-index: -2;
+      }
+
+      #pusleboks2 {
+        background-color: grey;
+        height: 495px;
+        width: 200px;
+        margin-top: 10px;
+        position: fixed;
+        left: 930px;
+        z-index: -1;
+      }
+
+      #puslebit1 {
+        background-image: url('Unicorn_1.png');
+        height: 189px;
+        width: 181px;
+        z-index: 1;
+        position: fixed;
+        top: 65px;
+        left: 30px;
+      }
+
+      #pusleplass1 {
+        height: 189px;
+        width: 181px;
+        z-index: 1;
+        position: fixed;
+        top: 65px;
+        left: 300px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="app"></div>
+
+    <script>
+      // model
+
+      // controller
+
+      // view
+      updateView();
+      function updateView() {
+        document.getElementById('app').innerHTML = `
+            <div id="pusleboks1">Puslebrikker skal ligge inne i denne
+              
+              </div>
+              
+              <div id="brett"></div>          
+              <div id="pusleboks2">Puslebrikker skal ligge inne i denne</div>
+              <div id="puslebit1"><div>
+              <div id="pusleplass1"><div>
+                `;
+      }
+    </script>
+  </body>
+</html>
