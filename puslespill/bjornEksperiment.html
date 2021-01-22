@@ -6,7 +6,7 @@
     <style>
       .page {
         display: grid;
-        grid-template-columns: 10px 180px 180px 180px 10px 180px 180px 180px 180px 10px;
+        grid-template-columns: 0px 180px 180px 180px 50px 0px 180px 180px 180px 10px;
         grid-template-rows: 0px 180px 180px 180px 180px 180px;
         grid-template-areas:
           'r1-1 r1-2 r1-3 r1-4 r1-5 r1-6 r1-7 r1-8 r1-9 r1-10'
@@ -27,7 +27,7 @@
       }
 
       #brett {
-        grid-area: r1-5;
+        grid-area: r1-6;
         background-image: url('Brett2.png');
         height: 390px;
         width: 580px;
@@ -40,7 +40,7 @@
         background-image: url('Unicorn_1,2.png');
         height: 180px;
         width: 180px;
-        border: dotted;
+
         cursor: pointer;
       }
 
@@ -50,7 +50,6 @@
         height: 180px;
         width: 180px;
         cursor: pointer;
-        border: dotted;
       }
 
       #puslebit3 {
@@ -59,7 +58,6 @@
         height: 180px;
         width: 180px;
         cursor: pointer;
-        border: dotted;
       }
 
       #puslebit4 {
@@ -68,7 +66,6 @@
         height: 180px;
         width: 180px;
         cursor: pointer;
-        border: dotted;
       }
 
       #puslebit5 {
@@ -77,7 +74,6 @@
         height: 180px;
         width: 180px;
         cursor: pointer;
-        border: dotted;
       }
 
       #puslebit6 {
@@ -86,54 +82,50 @@
         height: 180px;
         width: 180px;
         cursor: pointer;
-        border: dotted;
       }
 
       #pusleplass1 {
-        grid-area: r2-6;
-        background-color: rgba(128, 128, 128, 0.267);
+        grid-area: r2-7;
+        /* background-color: rgba(128, 128, 128, 0.267); */
         height: 180px;
         width: 180px;
-        
-      
       }
 
       #pusleplass2 {
-        grid-area: r2-7;
-        background-color: rgba(128, 128, 128, 0.267);
+        grid-area: r2-8;
+        /* background-color: rgba(128, 128, 128, 0.267); */
         height: 180px;
         width: 180px;
       }
 
       #pusleplass3 {
-        grid-area: r2-8;
+        grid-area: r2-9;
 
-        background-color: rgba(128, 128, 128, 0.267);
+        /* background-color: rgba(128, 128, 128, 0.267); */
         height: 180px;
         width: 180px;
       }
 
       #pusleplass4 {
-        grid-area: r3-6;
-        background-color: rgba(128, 128, 128, 0.267);
+        grid-area: r3-7;
+        /* background-color: rgba(128, 128, 128, 0.267); */
         height: 180px;
         width: 180px;
       }
 
       #pusleplass5 {
-        grid-area: r3-7;
-        background-color: rgba(128, 128, 128, 0.267);
+        grid-area: r3-8;
+        /* background-color: rgba(128, 128, 128, 0.267); */
         height: 180px;
         width: 180px;
       }
 
       #pusleplass6 {
-        grid-area: r3-8;
-        background-color: rgba(128, 128, 128, 0.267);
+        grid-area: r3-9;
+        /* background-color: rgba(128, 128, 128, 0.267); */
         height: 180px;
         width: 180px;
       }
-      
     </style>
   </head>
 
@@ -199,7 +191,7 @@
 
         // console.log(aktuellBrikke.id);
         brikkeValg = aktuellBrikke.id;
-        
+
         brikkeOgPlass();
       }
 
@@ -215,22 +207,22 @@
         console.log(brikkeValg);
         console.log(plassValg);
         if ((brikkeValg == 'puslebit1') & (plassValg == 'pusleplass6')) {
-          brikke1.style.gridArea = 'r3-8';
+          brikke1.style.gridArea = 'r3-9';
         }
         if ((brikkeValg == 'puslebit2') & (plassValg == 'pusleplass5')) {
-          brikke2.style.gridArea = 'r3-7';
+          brikke2.style.gridArea = 'r3-8';
         }
         if ((brikkeValg == 'puslebit3') & (plassValg == 'pusleplass4')) {
-          brikke3.style.gridArea = 'r3-6';
+          brikke3.style.gridArea = 'r3-7';
         }
         if ((brikkeValg == 'puslebit4') & (plassValg == 'pusleplass3')) {
-          brikke4.style.gridArea = 'r2-8';
+          brikke4.style.gridArea = 'r2-9';
         }
         if ((brikkeValg == 'puslebit5') & (plassValg == 'pusleplass2')) {
-          brikke5.style.gridArea = 'r2-7';
+          brikke5.style.gridArea = 'r2-8';
         }
         if ((brikkeValg == 'puslebit6') & (plassValg == 'pusleplass1')) {
-          brikke6.style.gridArea = 'r2-6';
+          brikke6.style.gridArea = 'r2-7';
         }
       }
     </script>
