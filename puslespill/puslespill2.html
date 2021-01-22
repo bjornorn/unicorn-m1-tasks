@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+      body {
+        background:#6b6b69;
+        color:white;
+      }
+      /*hei*/
+      .info {
+        position:relative;
+        font-family:Arial;
+        margin:10px;
+        text-align:center;
+        border-radius:5px;
+        font-size:15px;
+      }
+      
+      #title {
+        font-size:20px;
+      }
+      
+      #rest2 {
+        font-size:13px;
+      }
+      
+      #text div {
+        position:relative;
+        height: 160px;
+        width: 160px;
+        display: inline-block;
+        margin: 0;
+      }
+      
+      #text {
+        width:495px;
+        height:495px;
+        background:black;
+        border:5px solid black;
+        margin:auto;
+      }
+      
+      #images {
+        width: 100%
+      }
+      
+      img {
+        height: 160px;
+        width: 160px;
+      }
+      
+      #drag4,
+      #drag5,
+      #drag6,
+      #drag7,
+      #drag8,
+      #drag9,
+      #drag10,
+      #drag11,
+      #drag12 {
+        display: inline-block;
+        
+        width: 160px;
+        height: 160px;
+      }
+      
+      #drag4 {
+        background-image: url("image_part_006.jpg");
+      }
+      
+      #drag5 {
+        background-image: url("image_part_002.jpg");
+      }
+      
+      #drag6 {
+        background-image: url("image_part_009.jpg");
+      }
+      
+      #drag7 {
+        background-image: url("image_part_001.jpg");
+      }
+      
+      #drag8 {
+        background-image: url("image_part_004.jpg");
+      }
+      
+      #drag9 {
+        background-image: url("image_part_007.jpg");
+      }
+      
+      #drag10 {
+        background-image: url("image_part_003.jpg");
+      }
+      
+      #drag11 {
+        background-image: url("image_part_008.jpg");
+      }
+      
+      #drag12 {
+        background-image: url("image_part_005.jpg");
+      }
+    </style>
+</head>
+<body>
+    <div id="images">
+        <div id="drag4" draggable="true" ondragstart="drag(event)"></div>
+        <div id="drag5" draggable="true" ondragstart="drag(event)"></div>
+        <div id="drag6" draggable="true" ondragstart="drag(event)"></div>
+        <div id="drag7" draggable="true" ondragstart="drag(event)"></div>
+        <div id="drag8" draggable="true" ondragstart="drag(event)"></div>
+        <div id="drag9" draggable="true" ondragstart="drag(event)"></div>
+        <div id="drag10" draggable="true" ondragstart="drag(event)"></div>
+        <div id="drag11" draggable="true" ondragstart="drag(event)"></div>
+        <div id="drag12" draggable="true" ondragstart="drag(event)"></div>
+      </div>
+      
+      <div id="text">
+        <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div5" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div6" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div7" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div8" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="div9" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+      </div>
+
+    <script>
+        function allowDrop(ev) {
+            ev.preventDefault();
+}
+
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+}
+
+        function drop(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));
+}
+
+    </script>
+</body>
+</html>
