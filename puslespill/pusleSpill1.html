@@ -7,7 +7,7 @@
       .page {
         display: grid;
         grid-template-columns: 0px 180px 180px 180px 50px 0px 180px 180px 180px 10px;
-        grid-template-rows: 0px 180px 180px 180px 180px 180px;
+        grid-template-rows: 0px 180px 180px 0px 0px;
         grid-template-areas:
           'r1-1 r1-2 r1-3 r1-4 r1-5 r1-6 r1-7 r1-8 r1-9 r1-10'
           'r2-1 r2-2 r2-3 r2-4 r2-5 r2-6 r2-7 r2-8 r2-9 r2-10'
@@ -126,6 +126,11 @@
         height: 180px;
         width: 180px;
       }
+
+      #overskrift {
+        color: black;
+        padding-left: 1rem;
+      }
     </style>
   </head>
 
@@ -141,34 +146,27 @@
       updateView();
       function updateView() {
         document.getElementById('app').innerHTML = `
-  
-              <div class="page">
-              <div id="pusleboks1"></div>
+              <h1 id="overskrift" >Gruppeoppgave 2: Team Unicorn Puzzle</h1>
+                <div class="page">
+                  <div id="pusleboks1"></div>
+                  <div id="brett"></div>
 
-              <div id="brett"></div>
+                  
+                  <div id="puslebit1" onclick="velgBrikke(this)"></div>
+                  <div id="puslebit2" onclick="velgBrikke(this)"></div>
+                  <div id="puslebit3" onclick="velgBrikke(this)"></div>
+                  <div id="puslebit4" onclick="velgBrikke(this)"></div>
+                  <div id="puslebit5" onclick="velgBrikke(this)"></div>
+                  <div id="puslebit6" onclick="velgBrikke(this)"></div>
+                  
 
-              
-              <div id="puslebit1" onclick="velgBrikke(this)"></div>
-              <div id="puslebit2" onclick="velgBrikke(this)"></div>
-              <div id="puslebit3" onclick="velgBrikke(this)"></div>
-              <div id="puslebit4" onclick="velgBrikke(this)"></div>
-              <div id="puslebit5" onclick="velgBrikke(this)"></div>
-              <div id="puslebit6" onclick="velgBrikke(this)"></div>
-              
-
-              <div id="pusleplass1" class="pusleplasser" onclick="velgPlass(this)"></div>
-              <div id="pusleplass2" class="pusleplasser" onclick="velgPlass(this)"></div>
-              <div id="pusleplass3" class="pusleplasser" onclick="velgPlass(this)"></div>
-              <div id="pusleplass4" class="pusleplasser" onclick="velgPlass(this)"></div>
-              <div id="pusleplass5" class="pusleplasser" onclick="velgPlass(this)"></div>
-              <div id="pusleplass6" class="pusleplasser" onclick="velgPlass(this)"></div>
-
-              
-              
-
-
-              
-              </div>
+                  <div id="pusleplass1" class="pusleplasser" onclick="velgPlass(this)"></div>
+                  <div id="pusleplass2" class="pusleplasser" onclick="velgPlass(this)"></div>
+                  <div id="pusleplass3" class="pusleplasser" onclick="velgPlass(this)"></div>
+                  <div id="pusleplass4" class="pusleplasser" onclick="velgPlass(this)"></div>
+                  <div id="pusleplass5" class="pusleplasser" onclick="velgPlass(this)"></div>
+                  <div id="pusleplass6" class="pusleplasser" onclick="velgPlass(this)"></div>
+                </div>   
                 `;
       }
       // controller
@@ -228,4 +226,4 @@
     </script>
   </body>
 </html>
-<!-- <div class="info">${brikkeValg} </br> ${plassValg}</div> -->
+
