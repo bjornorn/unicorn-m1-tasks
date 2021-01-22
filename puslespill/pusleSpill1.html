@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      .page {
+        display: grid;
+        grid-template-columns: 0px 180px 180px 180px 50px 0px 180px 180px 180px 10px;
+        grid-template-rows: 0px 180px 180px 0px 0px;
+        grid-template-areas:
+          'r1-1 r1-2 r1-3 r1-4 r1-5 r1-6 r1-7 r1-8 r1-9 r1-10'
+          'r2-1 r2-2 r2-3 r2-4 r2-5 r2-6 r2-7 r2-8 r2-9 r2-10'
+          'r3-1 r3-2 r3-3 r3-4 r3-5 r3-6 r3-7 r3-8 r3-9 r3-10'
+          'r4-1 r4-2 r4-3 r4-4 r4-5 r4-6 r4-7 r4-8 r4-9 r4-10'
+          'r5-1 r5-2 r5-3 r5-4 r5-5 r5-6 r5-7 r5-8 r5-9 r5-10';
+        grid-gap: 10px 10px;
+      }
+
+      #pusleboks1 {
+        grid-area: r1-1;
+        background-color: lightskyblue;
+        height: 390px;
+        width: 580px;
+        border-radius: 10px;
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+      }
+
+      #brett {
+        grid-area: r1-6;
+        background-image: url('Brett2.png');
+        height: 390px;
+        width: 580px;
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+        border-radius: 10px;
+      }
+
+      #puslebit1 {
+        grid-area: r2-2;
+        background-image: url('Unicorn_1,2.png');
+        height: 180px;
+        width: 180px;
+
+        cursor: pointer;
+      }
+
+      #puslebit2 {
+        grid-area: r2-3;
+        background-image: url('Unicorn_2,2.png');
+        height: 180px;
+        width: 180px;
+        cursor: pointer;
+      }
+
+      #puslebit3 {
+        grid-area: r2-4;
+        background-image: url('Unicorn_3,2.png');
+        height: 180px;
+        width: 180px;
+        cursor: pointer;
+      }
+
+      #puslebit4 {
+        grid-area: r3-2;
+        background-image: url('Unicorn_4,2.png');
+        height: 180px;
+        width: 180px;
+        cursor: pointer;
+      }
+
+      #puslebit5 {
+        grid-area: r3-3;
+        background-image: url('Unicorn_5,2.png');
+        height: 180px;
+        width: 180px;
+        cursor: pointer;
+      }
+
+      #puslebit6 {
+        grid-area: r3-4;
+        background-image: url('Unicorn_6,2.png');
+        height: 180px;
+        width: 180px;
+        cursor: pointer;
+      }
+
+      #pusleplass1 {
+        grid-area: r2-7;
+        /* background-color: rgba(128, 128, 128, 0.267); */
+        height: 180px;
+        width: 180px;
+      }
+
+      #pusleplass2 {
+        grid-area: r2-8;
+        /* background-color: rgba(128, 128, 128, 0.267); */
+        height: 180px;
+        width: 180px;
+      }
+
+      #pusleplass3 {
+        grid-area: r2-9;
+
+        /* background-color: rgba(128, 128, 128, 0.267); */
+        height: 180px;
+        width: 180px;
+      }
+
+      #pusleplass4 {
+        grid-area: r3-7;
+        /* background-color: rgba(128, 128, 128, 0.267); */
+        height: 180px;
+        width: 180px;
+      }
+
+      #pusleplass5 {
+        grid-area: r3-8;
+        /* background-color: rgba(128, 128, 128, 0.267); */
+        height: 180px;
+        width: 180px;
+      }
+
+      #pusleplass6 {
+        grid-area: r3-9;
+        /* background-color: rgba(128, 128, 128, 0.267); */
+        height: 180px;
+        width: 180px;
+      }
+
+      #overskrift {
+        color: black;
+        padding-left: 1rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="app"></div>
+
+    <script>
+      // model
+      var brikkeValg = 'Velg en brikke';
+      var plassValg = 'Velg en plass';
+
+      // view
+      updateView();
+      function updateView() {
+        document.getElementById('app').innerHTML = `
+              <h1 id="overskrift" >Gruppeoppgave 2: Team Unicorn Puzzle</h1>
+                <div class="page">
+                  <div id="pusleboks1"></div>
+                  <div id="brett"></div>
+
+                  
+                  <div id="puslebit1" onclick="velgBrikke(this)"></div>
+                  <div id="puslebit2" onclick="velgBrikke(this)"></div>
+                  <div id="puslebit3" onclick="velgBrikke(this)"></div>
+                  <div id="puslebit4" onclick="velgBrikke(this)"></div>
+                  <div id="puslebit5" onclick="velgBrikke(this)"></div>
+                  <div id="puslebit6" onclick="velgBrikke(this)"></div>
+                  
+
+                  <div id="pusleplass1" class="pusleplasser" onclick="velgPlass(this)"></div>
+                  <div id="pusleplass2" class="pusleplasser" onclick="velgPlass(this)"></div>
+                  <div id="pusleplass3" class="pusleplasser" onclick="velgPlass(this)"></div>
+                  <div id="pusleplass4" class="pusleplasser" onclick="velgPlass(this)"></div>
+                  <div id="pusleplass5" class="pusleplasser" onclick="velgPlass(this)"></div>
+                  <div id="pusleplass6" class="pusleplasser" onclick="velgPlass(this)"></div>
+                </div>   
+                `;
+      }
+      // controller
+      const brikke1 = document.getElementById('puslebit1');
+      const brikke2 = document.getElementById('puslebit2');
+      const brikke3 = document.getElementById('puslebit3');
+      const brikke4 = document.getElementById('puslebit4');
+      const brikke5 = document.getElementById('puslebit5');
+      const brikke6 = document.getElementById('puslebit6');
+
+      const plass1 = document.getElementById('pusleplass1');
+      const plass2 = document.getElementById('pusleplass2');
+      const plass3 = document.getElementById('pusleplass3');
+      const plass4 = document.getElementById('pusleplass4');
+      const plass5 = document.getElementById('pusleplass5');
+      const plass6 = document.getElementById('pusleplass6');
+
+      function velgBrikke(vB) {
+        var aktuellBrikke = vB;
+
+        // console.log(aktuellBrikke.id);
+        brikkeValg = aktuellBrikke.id;
+
+        brikkeOgPlass();
+      }
+
+      function velgPlass(vP) {
+        var aktuellPlass = vP;
+        // console.log(aktuellPlass.id);
+        plassValg = aktuellPlass.id;
+
+        brikkeOgPlass();
+      }
+
+      function brikkeOgPlass() {
+        console.log(brikkeValg);
+        console.log(plassValg);
+        if ((brikkeValg == 'puslebit1') & (plassValg == 'pusleplass6')) {
+          brikke1.style.gridArea = 'r3-9';
+        }
+        if ((brikkeValg == 'puslebit2') & (plassValg == 'pusleplass5')) {
+          brikke2.style.gridArea = 'r3-8';
+        }
+        if ((brikkeValg == 'puslebit3') & (plassValg == 'pusleplass4')) {
+          brikke3.style.gridArea = 'r3-7';
+        }
+        if ((brikkeValg == 'puslebit4') & (plassValg == 'pusleplass3')) {
+          brikke4.style.gridArea = 'r2-9';
+        }
+        if ((brikkeValg == 'puslebit5') & (plassValg == 'pusleplass2')) {
+          brikke5.style.gridArea = 'r2-8';
+        }
+        if ((brikkeValg == 'puslebit6') & (plassValg == 'pusleplass1')) {
+          brikke6.style.gridArea = 'r2-7';
+        }
+      }
+    </script>
+  </body>
+</html>
+
