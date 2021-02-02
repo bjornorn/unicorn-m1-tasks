@@ -1,49 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <div id="board"></div>
 
+    <style>
+      .oddeTall {
+        background-color: chartreuse;
+        width: 10vw;
+        height: 10vw;
+
+        display: inline-block;
+        white-space: nowrap;
+
+        border: 0.2vw solid;
+        margin-right: 0.5vw;
+      }
+      .parTall {
+        background-color: cornflowerblue;
+        width: 10vw;
+        height: 10vw;
+
+        display: inline-block;
+        white-space: nowrap;
+
+        border: 0.2vw solid;
+        margin-right: 0.5vw;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
     <script>
-        //model
-        
-        let columnCount = 3;
-        let board = [
-            'x', 'o', '', 
-            '', '', '',
-            '', '', ''          
-        ];
+      //model
+      app = document.getElementById('app');
 
-        //view
-        show();
-        function show() {
-            let html = '';
-            // for (let i = 0; i < multiplicationMatrix.length; i++) { 
-            //     let number = multiplicationMatrix[i];
-                html += `<div>kake</div>`;
-                console.log(board);
-            }
-            // multiplicationMatrixDiv.innerHTML = html;
-            // multiplicationMatrixDiv.style.display = 'grid';
-            // multiplicationMatrixDiv.style.gridTemplateColumns = `repeat(${columnCount},40px)`;
-           
-        // }
+      // columnCount = 3;
 
+      testArray = ['', '', '', '', '', '', '', '', '', ''];
 
-        //controller
+      //view
+      oppdaterView();
+      function oppdaterView() {
+        app.innerHTML = '';
+        let alder;
 
+        //  start på element 1, sjekk antall elementer i array, legg til én
+        for (var i = 1; i < testArray.length; i++) {
+          alder = [i];
 
-        
-        
-        
-        
-        /*Notater/Skisse:
-        
-        */
+          // hvis tallet er oddetall && hvis tallet IKKE KAN deles på 3
+          if (alder % 2 != 0 && alder % 3 != 0) {
+            app.innerHTML +=
+              '<div id="' +
+              [i] +
+              '" class="oddeTall" onclick="trykka(this)">' +
+              testArray[i] +
+              '</div>';
+          }
+          // hvis tallet er oddetall og tallet KAN deles på 3 - legg til break
+          else if (alder % 2 != 0 && alder % 3 == 0) {
+            app.innerHTML +=
+              '<div id="' +
+              [i] +
+              '" class="oddeTall" onclick="trykka(this)">' +
+              testArray[i] +
+              '</div></br>';
+            console.log('gjeldene ' + testArray[i]);
+          }
+
+          // hvis tallet er partall og tallet KAN deles på 3 - legg til break
+          else if (alder % 2 == 0 && alder % 3 == 0) {
+            app.innerHTML +=
+              '<div id="' +
+              [i] +
+              '" class="parTall" onclick="trykka(this)">' +
+              testArray[i] +
+              '</div></br>';
+            console.log('gjeldene ' + testArray[i]);
+          }
+          // hvis tallet er partall
+          else {
+            app.innerHTML +=
+              '<div id="' +
+              [i] +
+              '" class="parTall" onclick="trykka(this)">' +
+              testArray[i] +
+              '</div>';
+          }
+        }
+      }
+
+      //controller
+
+      function trykka(tA) {
+        trykket = tA.innerHTML;
+        console.log(trykket);
+      }
     </script>
-</body>
+  </body>
 </html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Tre på rad</title>
+    <style type="text/css">
+      div {
+        user-select: none;
+      }
+
+      div.cell {
+        background-color: lightgray;
+        width: 100px;
+        height: 100px;
+        float: left;
+        margin: 2px;
+        font-size: 500%;
+        font-family: helvetica;
+        text-align: center;
+        vertical-align: middle;
+      }
+
+      div.first {
+        clear: left;
+      }
+
+      div.coloro {
+        color: blue;
+      }
+
+      div.colorx {
+        color: green;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="board"></div>
+
+    <script type="text/javascript">
+      // hjelpevariabler for view og controller
+      let boardDiv = document.getElementById('board');
+
+      // model
+      let board = ['', '', '', '', '', '', '', '', ''];
+
+      // view
+      show();
+      function show() {
+        let html = ''; // ny tom variable
+        for (let i = 0; i < 9; i++) {
+          // for loop
+          let first = i % 3 == 0 ? 'first' : ''; // 0, 3 og 6   får class="first"
+          html += `<div onclick="setX(${i})" class="cell color${board[i]} ${first}">${board[i]}</div>`; // lager bare ruter + lager first hvis den er true ellers blank '';
+        }
+        boardDiv.innerHTML = html;
+        // console.log(board[4]);
+      }
+
+      // controller
+      function setX(index) {
+        //legge til 'x'
+        // console.log(index);
+        if (board[index] === '') {
+          //for å ikke kunne forandre en du allerede har trykket på
+          board[index] = 'x';
+          xWon();
+          xWon() ? alert('Du vant!') : setO();
+        }
+        show();
+      }
+
+      function setO() {
+        // AI | .form() og keys() = finner fram alle rutene | .filter() = utelukker valgt rute
+        let blankIndexes = Array.from(board.keys()).filter(
+          (i) => board[i] === ''
+        ); // .from() = | .keys() =  | .filter() = | sjekker hvilken ruter som er ledig
+        if (blankIndexes.length === 0) return; //
+        let random = Math.floor(Math.random() * blankIndexes.length); //Tilfeldig tall mellom 0 og 1 * blankIndexes | Math.floor runder av til heltall
+        let blankIndex = blankIndexes[random]; //
+        board[blankIndex] = 'o';
+        oWon();
+        oWon() ? alert('Du tapte') : show();
+      }
+      function xWon() {
+        if (
+          board[0] + board[1] + board[2] == 'xxx' ||
+          board[3] + board[4] + board[5] == 'xxx' ||
+          board[6] + board[7] + board[8] == 'xxx' ||
+          board[0] + board[3] + board[6] == 'xxx' ||
+          board[1] + board[4] + board[7] == 'xxx' ||
+          board[2] + board[5] + board[8] == 'xxx' ||
+          board[0] + board[4] + board[8] == 'xxx' ||
+          board[2] + board[4] + board[6] == 'xxx'
+        ) {
+          console.log('Jippi DU VANT');
+
+          return true;
+        } else {
+          return false;
+        }
+        // console.log(xWon());
+      }
+
+      function oWon() {
+        if (
+          board[0] + board[1] + board[2] == 'ooo' ||
+          board[3] + board[4] + board[5] == 'ooo' ||
+          board[6] + board[7] + board[8] == 'ooo' ||
+          board[0] + board[3] + board[6] == 'ooo' ||
+          board[1] + board[4] + board[7] == 'ooo' ||
+          board[2] + board[5] + board[8] == 'ooo' ||
+          board[0] + board[4] + board[8] == 'ooo' ||
+          board[2] + board[4] + board[6] == 'ooo'
+        ) {
+          return true;
+        } else {
+          return false;
+        }
+        // console.log(board);
+      }
+      /*
+        - Restart button
+        - Ingen vinner 
+        - 
+
+        */
+    </script>
+  </body>
+</html>
