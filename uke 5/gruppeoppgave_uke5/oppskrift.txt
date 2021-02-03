@@ -1,0 +1,97 @@
+Teamoppgave: Stein Saks Papir!
+    Man skal kunne velge en option og spille mot en computer som deretter velger tilfeldig mellom de 3 (eller fler!) mulighetene.
+    Vis på skjermen hvem som valgte hva - og hvem som vant
+
+    Det er ingenting i veien for å bruke noe annet enn "stein" , "saks" og "papir" som velgbare options - bare å slippe kreativiteten løs!
+    Løs oppgaven med MVC - det gjør det lettere å vise innholdet i variabler i viewet - og dere får mer trening i å bruke det :slight_smile:
+
+    Lag gjerne unitTester underveis som sjekker de forskjellige controller funksjonene dere lager - en flott måte å øve seg på å jobbe testdrevet!
+
+    Gå sammen i teamene som før - og planlegg hva dere skal gjøre og hvem som skal gjøre hva. Skriv/tegn gjerne opp
+
+    Gleder meg til å se resultatene neste mandag!
+
+Hint:
+    Parametere
+    IF-setninger
+    MVC ;)
+
+
+Plan:
+
+1. lage view med 3 alternativer og et displaysom fortelller hva man skal gjøre
+2. Lage en funksjon som viser hvilket alternativ spiller har valgt og at data tenker (med delay)
+3. funksjon for at datamaskin velger og vise datamaskin sitt valg
+4. funksjon som viser hvem som vant
+5. endre display så det viser ASCII illustrasjoner
+6. vise i display spillerens valgt
+7. vise i display at computer tenker
+
+<pre>
+    _______           
+---'   ____)        
+      (_____)          
+      (_____)
+      (____)
+---.__(___)
+</pre>
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+
+       _
+   .-/` `-._
+  / /  /  / `-. 
+ / /  /  /  /  `
+| (_ /  /  /  /
+\   (_ (_ (_ /
+ )         /`
+/        /`
+
+                       _____
+     _________       / _ _ `.     
+    / ======= \     |_/___) |  
+   / __________\      /  __.'
+  | ___________ |     |_|
+  | | -       | |     (_)
+  | |         | |
+  | |_________| |
+  \=____________/   
+  / """"""""""" \                      
+ / ::::::::::::: \  
+(_________________)
+
+                      _____
+                     / _ _ `.
+                    |_/___) |
+     _________        /  __.'   
+    / ======= \       |_|
+   / __________\      (_)
+  | ___________ |
+  | | -       | |
+  | |         | |
+  | |_________| |
+  \=____________/   
+  / """"""""""" \  
+ / ::::::::::::: \  
+(_________________)
+
+______           _       ______                       _____      _                    _ 
+| ___ \         | |      | ___ \                     /  ___|    (_)                  | |
+| |_/ /___   ___| | __   | |_/ /_ _ _ __   ___ _ __  \ `--.  ___ _ ___ ___  ___  _ __| |
+|    // _ \ / __| |/ /   |  __/ _` | '_ \ / _ \ '__|  `--. \/ __| / __/ __|/ _ \| '__| |
+| |\ \ (_) | (__|   < _  | | | (_| | |_) |  __/ |_   /\__/ / (__| \__ \__ \ (_) | |  |_|
+\_| \_\___/ \___|_|\_( ) \_|  \__,_| .__/ \___|_( )  \____/ \___|_|___/___/\___/|_|  (_)
+                     |/            | |          |/                                      
+                                   |_|                                                  
+

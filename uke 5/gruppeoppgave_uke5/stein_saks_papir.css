@@ -1,0 +1,100 @@
+/* pixelish webfont*/
+
+@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Share+Tech+Mono&display=swap");
+
+body {
+  font-family: "VT323", monospace;
+  font-size: 2rem;
+  margin: 0;
+  color: #29d7a9;
+  
+}
+
+#mainFrame {
+  background-color: rgb(71, 71, 71);
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+#mainScreen {
+  background-color: #05321e;
+  padding-top: 5vw;
+  width: 80vw;
+  height: 80vh;
+  position: fixed;
+  top: 5vh;
+  left: 10vw;  
+  border-radius: 5px;
+  border: 
+}
+
+#textScreen {
+  background-color: #05321e;
+  height: 20vh;
+  width: 70vw;
+  font-size: 3vw;
+  text-align: center;
+  position: fixed;
+  top: 10vh;
+  left: 15vw;
+  
+  
+}
+
+#playerScreen {
+  height: 40vh;
+  width: 30vw;
+  /* background-color: #05321e; */
+  background-color: #05321e;
+  position: fixed;
+  top: 35vh;
+  left: 15vw;
+  
+  
+}
+#resetButton {
+background-color: rgb(78, 94, 74);
+width: 9vw;
+height: 10vh;
+border-radius: 90px;
+text-align: center;
+line-height: 9vh;
+position: relative;
+top: 50vh;
+left: 35.5vw;
+
+}
+
+#computerScreen {
+  height: 40vh;
+  width: 30vw;
+  /* background-color: #05321e; */
+  background-color: #05321e;
+
+  position: fixed;
+  top: 35vh;
+  left: 55vw;
+}
+
+
+.optionBox {
+  height: 10vh;
+  width: 20vw;
+  background-color: #0d8a52;   
+  text-align: center;
+  margin-left: 5vw;
+  line-height: 9vh;
+
+  float: left;
+  border-radius: 90px;
+
+  position: relative;
+  top: 57vh;
+  
+  
+ 
+} 
