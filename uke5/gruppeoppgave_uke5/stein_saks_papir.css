@@ -5,7 +5,7 @@
 
 body {
   font-family: "VT323", monospace;
-  font-size: 4vw;
+  font-size: 2vw;
   margin: 0;
   color: #29d7a9;
   
@@ -35,7 +35,7 @@ body {
   background-color: #05321e;
   height: 20vh;
   width: 70vw;
-  font-size: 3vw;
+  font-size: 4vw;
   text-align: center;
   position: fixed;
   top: 10vh;
@@ -57,11 +57,11 @@ body {
 }
 #resetButton {
 background-color: rgb(78, 94, 74);
-width: 9vw;
-height: 10vh;
+width: 6vw;
+height: 6vw;
 border-radius: 90px;
 text-align: center;
-line-height: 9vh;
+line-height: 6vw;
 position: relative;
 top: 50vh;
 left: 35.5vw;
