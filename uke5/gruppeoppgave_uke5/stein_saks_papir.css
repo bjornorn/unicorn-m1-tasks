@@ -3,14 +3,62 @@
 @import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
 @import url("https://fonts.googleapis.com/css?family=Share+Tech+Mono&display=swap");
 
+
+  
 body {
   font-family: "VT323", monospace;
   font-size: 2vw;
   margin: 0;
-  color: #29d7a9;
-  
+  color:#14fdce;
 }
 
+p {
+  font-family: "VT323", monospace;
+}
+
+pre {
+  font-family: "VT323", monospace;
+}
+
+.glow {
+    animation: crt-glow 60s infinite; 
+    background:
+      radial-gradient(circle at center,
+      rgba(27, 212, 89, 0.575) 0%,
+      rgb(27, 212, 89) 58%,
+      rgb(21, 235, 92) 80%,
+      rgb(19, 94, 29) 93%,
+      rgb(10, 23, 12) 100%);
+    /*filter: blur(10rem) opacity(0.1);*/
+    opacity: 1; 
+    position: fixed;
+  }
+  .glow {
+    animation: crt-glow 60s infinite; 
+    background:
+      radial-gradient(circle at center,
+      rgba(27, 212, 89, 0.575) 0%,
+      rgb(27, 212, 89) 58%,
+      rgb(21, 235, 92) 80%,
+      rgb(19, 94, 29) 93%,
+      rgb(10, 23, 12) 100%);
+    /*filter: blur(10rem) opacity(0.1);*/
+    opacity: 1; 
+    position: fixed;
+  }
+.scanlines {
+    background: linear-gradient(
+      to bottom,
+      rgba(255,255,255,0),
+      rgba(255,255,255,0) 50%,
+      rgba(0,0,0,0.2) 70%,
+      rgba(0,0,0,0.6)
+    );
+    background-size: 100% 0.3rem;
+    /*border-radius: 2rem;*/
+    position: absolute;
+  }
+  
 #mainFrame {
   background-color: rgb(71, 71, 71);
   width: 100vw;
@@ -18,43 +66,60 @@ body {
   position: absolute;
   top: 0px;
   left: 0px;
+  border-radius: 2rem;
+  border: 1rem solid;
+  border-bottom-color: #121212;
+  border-left-color: #080808;
+  border-right-color: #080808;
+  border-top-color: #020202;
+  box-shadow:
+    inset 0 0 18rem black,
+    inset 0 0 3rem black,
+    0 0 10rem black;
+  height: 93%;
+  position: absolute;
+  top: 2%;
+  left: 3.2%;
+  width: 92%;
 }
 
+
 #mainScreen {
-  background-color: #05321e;
+  background-color: #031e11;
   padding-top: 5vw;
-  width: 80vw;
+  width: 90vw;
   height: 80vh;
   position: fixed;
   top: 5vh;
-  left: 10vw;  
-  border-radius: 5px;
+  left: 5vw;  
+  border-radius: 20px;
+  
 }
 
 #textScreen {
-  background-color: #05321e;
+  background: transparent;
   height: 20vh;
   width: 70vw;
-  font-size: 4vw;
+  font-size: 1.5vw;
   text-align: center;
   position: fixed;
   top: 10vh;
   left: 15vw;
-  
-  
+  cursor: default;
 }
 
 #playerScreen {
   height: 40vh;
   width: 30vw;
-  /* background-color: #05321e; */
-  background-color: #05321e;
+  background: transparent;
   position: fixed;
+  font-size: 1.5vw;
   top: 35vh;
   left: 15vw;
-  
-  
+  cursor: default;
+
 }
+
 #resetButton {
 background-color: rgb(78, 94, 74);
 width: 6vw;
@@ -64,36 +129,33 @@ text-align: center;
 line-height: 6vw;
 position: relative;
 top: 50vh;
-left: 35.5vw;
-
+left: 41vw;
+cursor: pointer;
 }
 
 #computerScreen {
   height: 40vh;
   width: 30vw;
-  /* background-color: #05321e; */
-  background-color: #05321e;
-
+  background: transparent;
+  font-size: 1.5vw;
   position: fixed;
   top: 35vh;
-  left: 55vw;
+  left: 66.5vw;
+  cursor: default;
+  font-family: "VT323", monospace;
 }
-
 
 .optionBox {
   height: 10vh;
   width: 20vw;
-  background-color: #0d8a52;   
+  background-color:rgb(78, 94, 74);   
   text-align: center;
-  margin-left: 5vw;
+  margin-left: 7.1vw;
   line-height: 9vh;
-
+  cursor: pointer;
   float: left;
   border-radius: 90px;
 
   position: relative;
   top: 57vh;
-  
-  
- 
 } 

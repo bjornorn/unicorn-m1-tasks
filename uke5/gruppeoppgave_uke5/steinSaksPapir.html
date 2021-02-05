@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="stein_saks_papir.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script>
+      //model
+      let playerSelected = "<p>Please select an alternative...</p>";
+      let computerThinking = "<p>Computer is waiting for you...</p>";
+      let computerSelected = "";
+      let optionsArray = ["Rock", "Paper", "Scissor"];
+      let computerActiveChoice;
+      let playerActiveChoice;
+      let gameLogo = "______           _       ______                       _____      _                    _ \n" +
+                     "| ___ \\         | |      | ___ \\                     /  ___|    (_)                  | |\n" +
+                     "| |_/ /___   ___| | __   | |_/ /_ _ _ __   ___ _ __  \\ `--.  ___ _ ___ ___  ___  _ __| |\n" +
+                     "|    // _ \\ / __| |/ /   |  __/ _` | '_ \\ / _ \\ '__|  `--. \\/ __| / __/ __|/ _ \\| '__| |\n" +
+                     "| |\\ \\ (_) | (__|   < _  | | | (_| | |_) |  __/ |_   /\\__/ / (__| \\__ \\__ \\ (_) | |  |_|\n" +
+                     "\\_| \\_\\___/ \\___|_|\\_( ) \\_|  \\__,_| .__/ \\___|_( )  \\____/ \\___|_|___/___/\\___/|_|  (_)\n" +
+                     "                     |/            | |          |/                                      \n" +
+                     "                                   |_|                                                  \n";
+
+      
+
+      
+      let rock =     "          _______     \n" +
+                     "          (____   '--- \n" +
+                     "         (_____)       \n" +
+                     "         (_____)       \n" +
+                     "          (____)       \n" +
+                     "           (___)__.--- \n";
+
+      let paper =     "               _______     \n" +
+                      "           ____(____   '--- \n" +
+                      "          (______           \n" +
+                      "         (_______           \n" +
+                      "          (_______          \n" +
+                      "            (__________'--- \n";
+      
+                      
+      let scissor =     "               _______     \n" +
+                        "           ____(____   '--- \n" +
+                        "          (______           \n" +
+                        "         (__________        \n" +
+                        "               (____)       \n" +
+                        "                (___)__.--- \n";                        
+      
+      let thinking =        "                              _____ \n" +
+                            "             _________       / _ _ `. \n" +    
+                            "            / ======= \\     |_/___) | \n" + 
+                            "           / __________\\      /  __.'\n" +
+                            "          | ___________ |     |_|\n" +
+                            "          | | -       | |     (_)\n" +
+                            "          | |         | |\n" +
+                            "          | |_________| |\n" +
+                            "          \\=____________/   \n" +
+                            "          / ''''''''''' \\      \n" +                
+                            "         / ::::::::::::: \\  \n" +
+                            "        (_________________)\n";
+      
+      
+                        let result = gameLogo;
+      html = document.getElementById("app");
+      
+      //view
+      updateView();
+      function updateView() {
+        html = `
+            <div id="mainFrame">
+                <div id="mainScreen" class="scanlines glow">
+                    <div id="resetButton" class="scanlines" onclick="resetGame()">Restart</div>
+                    <div id="textScreen" class="glow"><pre>${result}</pre></div>
+                    <div id="playerScreen" class="glow"><pre>${playerSelected}</pre></div>
+                    <div id="computerScreen" class="glow"><pre>${computerThinking} ${computerSelected}</pre></div>                  
+                    <div id="Rock" class="optionBox scanlines" onclick="playerChoice(this)">Rock<pre>                   
+    _______           
+---'   ____)        
+      (_____)          
+      (_____)
+      (____)
+---.__(___)</pre></div>
+                    <div id="Scissor" class="optionBox scanlines" onclick="playerChoice(this)">Scissor<pre>    
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)</pre></div>
+                    <div id="Paper" class="optionBox scanlines" onclick="playerChoice(this)">Paper<pre>    
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)</pre></div>
+                    
+                    
+                </div>
+            </div>
+          `;
+        app.innerHTML = html;
+      }
+
+      //controller
+
+      function playerChoice(selectedOption) {
+        computerThinking = '<p>Computer is thinking...</p>';
+        computerSelected = '';
+        playerSelected = "<p>You have chosen: "  + selectedOption.innerText + "</p>";
+        updateView();
+        computerThinking =
+"<p>                              _____ \n" +
+"             _________       / _ _ `. \n" +    
+"            / ======= \\     |_/___) | \n" + 
+"           / __________\\      /  __.'\n" +
+"          | ___________ |     |_|\n" +
+"          | | -       | |     (_)\n" +
+"          | |         | |\n" +
+"          | |_________| |\n" +
+"          \\=____________/   \n" +
+"          / ''''''''''' \\      \n" +                
+"         / ::::::::::::: \\  \n" +
+"        (_________________)\n</p>";
+        setTimeout(updateView, 1000);        
+        setTimeout(computerChoice, 2000);
+        setTimeout(updateView, 3000); 
+    
+        playerActiveChoice = selectedOption.id;        
+
+    }
+    
+    function computerChoice() {
+        computerActiveChoice = optionsArray[Math.floor(Math.random() * optionsArray.length)];
+        
+        //trenger delay
+        computerThinking = '<p>Computer have chosen: ' + computerActiveChoice + '</p>';
+        if (computerActiveChoice == 'Rock') {
+          computerSelected = rock;    
+        }
+        else if (computerActiveChoice == 'Paper') {
+          computerSelected = paper;
+        }
+        else if (computerActiveChoice == 'Scissor') {
+          computerSelected = scissor;   }
+
+         
+
+          whoIsWinner();
+      
+          
+        }
+      
+
+      function whoIsWinner() {
+        console.log('Player global variabel: ' + playerActiveChoice);
+        console.log('Computer global variabel: ' + computerActiveChoice);
+
+        if (playerActiveChoice == computerActiveChoice) {
+            result = " _____                     _ \n" +
+                     "|  __ \\                   | |\n" +
+                     "| |  | |_ __ __ ___      _| |\n" +
+                     "| |  | | '__/ _` \\ \\ /\\ / / |\n" +
+                     "| |__| | | | (_| |\\ V  V /|_|\n" +
+                     "|_____/|_|  \\__,_| \\_/\\_/ (_)\n";
+        }
+        else if (playerActiveChoice == "Paper" && computerActiveChoice == "Rock" ||    
+                playerActiveChoice == "Scissor" && computerActiveChoice == "Paper" ||
+                playerActiveChoice == "Rock" && computerActiveChoice == "Scissor") {
+                result = "__     __          __          ___       _ \n" +
+                         "\\ \\   / /          \\ \\        / (_)     | |\n" +
+                         " \\ \\_/ /__  _   _   \\ \\  /\\  / / _ _ __ | |\n" +
+                         "  \\   / _ \\| | | |   \\ \\/  \\/ / | | '_ \\| |\n" +
+                         "   | | (_) | |_| |    \\  /\\  /  | | | | |_|\n" +
+                         "   |_|\\___/ \\__,_|     \\/  \\/   |_|_| |_(_)";
+        }
+        else {result = "__     __           _                    _ \n" +
+                       "\\ \\   / /          | |                  | |\n" +
+                       " \\ \\_/ /__  _   _  | |     ___  ___  ___| |\n" +
+                       "  \\   / _ \\| | | | | |    / _ \\/ __|/ _ \\ |\n" +
+                       "   | | (_) | |_| | | |___| (_) \\__ \\  __/_|\n" +
+                       "   |_|\\___/ \\__,_| |______\\___/|___/\\___(_)\n";
+        }
+      }
+
+      function resetGame() {
+        playerSelected = "<p>Please select an alternative...</p>";
+        computerThinking = "<p>Computer is waiting for you...</p>";
+        computerSelected = ""; 
+        result =   "______           _       ______                       _____      _                    _ \n" +
+                   "| ___ \\         | |      | ___ \\                     /  ___|    (_)                  | |\n" +
+                   "| |_/ /___   ___| | __   | |_/ /_ _ _ __   ___ _ __  \\ `--.  ___ _ ___ ___  ___  _ __| |\n" +
+                   "|    // _ \\ / __| |/ /   |  __/ _` | '_ \\ / _ \\ '__|  `--. \\/ __| / __/ __|/ _ \\| '__| |\n" +
+                   "| |\\ \\ (_) | (__|   < _  | | | (_| | |_) |  __/ |_   /\\__/ / (__| \\__ \\__ \\ (_) | |  |_|\n" +
+                   "\\_| \\_\\___/ \\___|_|\\_( ) \\_|  \\__,_| .__/ \\___|_( )  \\____/ \\___|_|___/___/\\___/|_|  (_)\n" +
+                   "                     |/            | |          |/                                      \n" +
+                   "                                   |_|                                                  \n";
+        updateView();
+       }
+    </script>
+  </body>
+</html>

@@ -27,6 +27,16 @@ Plan:
 6. vise i display spillerens valgt
 7. vise i display at computer tenker
 
+DEtte må vi fikse:
+
+X1. tekst i felter nederst - satt inn tekst i div innerHTML
+7. riktige ikoner på riktig plass
+2. font
+3. glow
+4. computer sitt valg  f. eks "rock" står utenfor sitt felt.
+5. effekter på ramme
+6. FORSLAG: Fjerne ytre ramme i mobilvisning?
+
 <pre>
     _______           
 ---'   ____)        
@@ -42,7 +52,7 @@ Plan:
          _______)
 ---.__________)
 
-    _______
+    ______
 ---'   ____)____
           ______)
        __________)
