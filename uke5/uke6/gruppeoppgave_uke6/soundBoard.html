@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .buttons {
+        width: 10vw;
+        height: 10vw;
+        float: left;
+        background-color: blue;
+        border-radius: 45%;
+        margin: 1vw;
+      }
+
+      .firstInRow {
+        clear: left;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script>
+      // model
+      let app = document.getElementById('app');
+      let buttons = ['', '', '', '', '', '', '', '', '', '', '', ''];
+      // view
+      updateView();
+      function updateView() {
+        html = '';
+        for (let i = 0; i < buttons.length; i++) {
+          let firstInRow = i % 4 == 0 ? 'firstInRow' : '';
+          html += `<div id="${i}" class="buttons ${firstInRow}"></div>`;
+          console.log(i);
+        }
+      }
+      app.innerHTML = html;
+      // controller
+    </script>
+  </body>
+</html>
