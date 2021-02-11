@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="shortcut icon" href="#" />
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,11 +14,10 @@
         background-color: blue;
         border-radius: 45%;
         margin: 1vw;
-    }
-    
-    .actionButton {
-        border: darkblue solid 1vw;
+      }
 
+      .actionButton {
+        border: darkblue solid 1vw;
       }
 
       .firstInRow {
@@ -25,45 +25,106 @@
       }
     </style>
 
-    <!-- <audio id="audio1" src="bubbles.mp3" ></audio> -->
+    <audio id="audio1" src="bubbles.mp3"></audio>
+    <audio id="audio2" src="clay.mp3"></audio>
+    <audio id="audio3" src="confetti.mp3"></audio>
+    <audio id="audio4" src="glimmer.mp3"></audio>
+    <audio id="audio5" src="moon.mp3"></audio>
+    <audio id="audio6" src="ufo.mp3"></audio>
   </head>
   <body>
-    
     <div id="app"></div>
+
     <script>
       // model
       let app = document.getElementById('app');
-      let buttons = ['', '', '', '', '', '', '', '', '', '', '', ''];
+      let buttons = ['', '', '', '', '', '', '', '', ''];
       // let sounds = ['lyd1', 'lyd2', 'lyd3']
-      var bubbles;
+
+      var bubbles = document.getElementById('audio1');
+      var clay = document.getElementById('audio2');
+      var confetti = document.getElementById('audio3');
+      var glimmer = document.getElementById('audio4');
+      var moon = document.getElementById('audio5');
+      var ufo = document.getElementById('audio6');
+
+      let clickedNr;
 
       // view
       updateView();
       function updateView() {
         html = '';
         for (let i = 0; i < buttons.length; i++) {
-          let firstInRow = i % 4 == 0 ? 'firstInRow' : '';
-          
+          let firstInRow = i % 3 == 0 ? 'firstInRow' : '';
+
           html += `<div class="buttons ${firstInRow}" onclick="klikker(${i})"></div>`;
           console.log(i);
         }
       }
       app.innerHTML = html;
-      
-      // controller
-      preLoad();
-      function preLoad() {
-        bubbles = loadSound('bubbles.mp3');
-        
-      }
-      function klikker(nummer){
-          console.log(bubbles);    
-      
-          bubbles.play();
-   
-           }
 
-      
+      // controller
+
+      //Trykke på numpad for å aktivere lyd
+      document.addEventListener('keydown', (event) => {
+        if (event.key == '7') {
+          bubbles.play();
+        }
+        if (event.key == '8') {
+          clay.play();
+        }
+        if (event.key == '9') {
+          confetti.play();
+        }
+        if (event.key == '4') {
+          glimmer.play();
+        }
+        if (event.key == '5') {
+          moon.play();
+        }
+        if (event.key == '6') {
+          ufo.play();
+        }
+        //trenger 3 til eller bruke de samme.
+      });
+
+      //trykke på ruter for å aktivere lyd
+      function klikker(nummer) {
+        clickedNr = nummer;
+        //console.log(clickedNr)
+
+        if (clickedNr == 0) {
+          bubbles.play();
+        }
+        if (clickedNr == 1) {
+          clay.play();
+        }
+        if (clickedNr == 2) {
+          confetti.play();
+        }
+        if (clickedNr == 3) {
+          clay.play();
+        }
+        if (clickedNr == 4) {
+          clay.play();
+        }
+        if (clickedNr == 5) {
+          clay.play();
+        }
+
+        /*
+      Notater Agith:       
+      Er det tungvindt å gjøre det sånn?
+
+      - Hvordan få samme melodi til å kjøre flere ganger samtidig? 
+      - Trykke på numpad for å aktivere lydene
+          (7) (8) (9)
+          (4) (5) (6)
+          (1) (2) (3)
+
+      - Fjernet 3 ruter
+      */
+      }
     </script>
   </body>
 </html>
