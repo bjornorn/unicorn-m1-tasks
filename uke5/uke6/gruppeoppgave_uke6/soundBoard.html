@@ -24,13 +24,19 @@
         clear: left;
       }
     </style>
+
+    <!-- <audio id="audio1" src="bubbles.mp3" ></audio> -->
   </head>
   <body>
+    
     <div id="app"></div>
     <script>
       // model
       let app = document.getElementById('app');
       let buttons = ['', '', '', '', '', '', '', '', '', '', '', ''];
+      // let sounds = ['lyd1', 'lyd2', 'lyd3']
+      let bubbles;
+
       // view
       updateView();
       function updateView() {
@@ -45,10 +51,18 @@
       app.innerHTML = html;
 
       // controller
-      function klikker(klikka){
-          console.log(klikka)
-
+      preLoad();
+      function preLoad() {
+        bubbles = loadSound('bubbles.mp3');
       }
+      function klikker(nummer){
+          console.log(nummer);    
+      
+          bubbles.play();
+   
+           }
+
+      
     </script>
   </body>
 </html>
