@@ -35,7 +35,7 @@
       let app = document.getElementById('app');
       let buttons = ['', '', '', '', '', '', '', '', '', '', '', ''];
       // let sounds = ['lyd1', 'lyd2', 'lyd3']
-      let bubbles;
+      var bubbles;
 
       // view
       updateView();
@@ -49,14 +49,15 @@
         }
       }
       app.innerHTML = html;
-
+      
       // controller
       preLoad();
       function preLoad() {
         bubbles = loadSound('bubbles.mp3');
+        
       }
       function klikker(nummer){
-          console.log(nummer);    
+          console.log(bubbles);    
       
           bubbles.play();
    
