@@ -13,6 +13,11 @@
         background-color: blue;
         border-radius: 45%;
         margin: 1vw;
+    }
+    
+    .actionButton {
+        border: darkblue solid 1vw;
+
       }
 
       .firstInRow {
@@ -32,12 +37,18 @@
         html = '';
         for (let i = 0; i < buttons.length; i++) {
           let firstInRow = i % 4 == 0 ? 'firstInRow' : '';
-          html += `<div id="${i}" class="buttons ${firstInRow}"></div>`;
+          
+          html += `<div class="buttons ${firstInRow}" onclick="klikker(${i})"></div>`;
           console.log(i);
         }
       }
       app.innerHTML = html;
+
       // controller
+      function klikker(klikka){
+          console.log(klikka)
+
+      }
     </script>
   </body>
 </html>
