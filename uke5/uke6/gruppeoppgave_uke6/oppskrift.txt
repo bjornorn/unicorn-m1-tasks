@@ -1,41 +1,29 @@
-1. spille av lyd med onclick - forskjellig lyd på forskjellig div
+* spille av lyd med onclick - forskjellig lyd på forskjellig div
+* trykker man samme valg på nytt starter lyden på nytt
+
+* bestemme hvilke lyder som skal brukes
+* finne 3 arnold lyder
+* finne 3 fanfare lyder
+* style soundboard
+* lage header
+* effekt når DIV blir avspilt
 
 
 
 
+/*  */
+Lyder: 
+
+Arnold on: Mat 
+Arnold on: Trening
+Arnold on: 
+Arnold on: 
+Arnold on: 
+Arnold on: 
+Trommevirvel
+fanfare
+Feiring
 
 
-
-Kun javascript:
-
-    function myPlay(){
-        var audio = new Audio("sample.mp3");
-        audio.play();
-    }
-
--------------------------------------------------------
-
-<!DOCTYPE HTML>
-<html>
-<head>
-<title>Audio</title>
-</head>
-<body>
-
-<script>
-function play(element){
-   var audio = document.getElementById(element);
-   audio.play();
-             }
-</script>
-
-<input type="button" value="PLAY"  onclick="play('audio1')">
-<audio id="audio1" src="audio/semipro.MP3" ></audio>
-
-<input type="button" value="PLAY 2"  onclick="play('audio2')">
-<audio id="audio2" src="audio/hit.MP3" ></audio>
-
-
-
-</body>
-</html>
+if (clickedNr == 0)
+  currentAudio = bubbles

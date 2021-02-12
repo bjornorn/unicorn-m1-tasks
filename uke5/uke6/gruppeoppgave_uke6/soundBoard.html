@@ -5,32 +5,159 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>the Arnold Way</title>
     <style>
-      .buttons {
-        width: 10vw;
-        height: 10vw;
-        float: left;
-        background-color: blue;
-        border-radius: 45%;
-        margin: 1vw;
+      @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Stalinist+One&display=swap');
+
+      body {
+        background-color: black;
+        font-family: 'Stalinist One', cursive;
       }
 
-      .actionButton {
-        border: darkblue solid 1vw;
+      #headline {
+        color: red;
+        float: left;
+        clear: both;
+        font-size: 2vw;
+        margin-top: 1vw;
+        margin-left: 3vw;
+        padding-left: 6vw;
+        user-select: none;
+      }
+      #headline2 {
+        color: red;
+        float: left;
+        clear: both;
+        font-size: 4vw;
+        margin-left: 2vw;
+        user-select: none;
+      }
+
+      #bottomline {
+        color: red;
+        float: left;
+        clear: both;
+        font-size: 1.5vw;
+        margin-top: 1vw;
+        margin-left: 2.5vw;
+      }
+
+      .buttons {
+        width: 9vw;
+        height: 9vw;
+        float: left;
+        background-color: rgb(49, 24, 24);
+        border: solid red 1vw;
+        border-radius: 20%;
+        margin: 0.5vw;
+        margin-left: 2vw;
+        font-size: 6vw;
+        text-align: center;
+        line-height: 9vw;
+        user-select: none;
+      }
+      #picture {
+        height: 80vh;
+        position: fixed;
+
+        bottom: 0;
+        /* right: -15vw; */
       }
 
       .firstInRow {
         clear: left;
       }
+
+      @media only screen and (max-width: 600px) {
+        body {
+          /* background-color: black; */
+          font-family: 'Stalinist One', cursive;
+          margin: 0;
+        }
+
+        #ytterkant {
+          display: block;
+          /* margin: auto; */
+          /* background-color: darkgreen; */
+          width: auto;
+          height: 100vh;
+        }
+
+        #headline {
+          color: red;
+
+          font-size: 3vh;
+          width: 100vw;
+          text-align: center;
+          margin: 5vw auto auto auto;
+          padding: 0;
+          user-select: none;
+
+          /* margin-top: 1vh;
+          margin-left: 3vh;
+          padding-left: 6vh; */
+        }
+        #headline2 {
+          color: red;
+          /* float: left; */
+          /* clear: both; */
+          width: 100vw;
+          text-align: center;
+          font-size: 5vh;
+          margin: 0;
+          user-select: none;
+
+          /* margin-left: 2vh; */
+        }
+
+        #bottomline {
+          color: red;
+          margin: 0;
+          width: 100vw;
+          margin-top: 1vh;
+          font-size: 2.5vh;
+          text-align: center;
+          user-select: none;
+
+          /* margin-top: 1vh;
+          margin-left: 2.5vh; */
+        }
+
+        .buttons {
+          width: 22vw;
+          height: 22vw;
+          /* float: left; */
+          background-color: rgb(49, 24, 24);
+          border: solid red 1vw;
+          border-radius: 20%;
+          margin-top: 2vh;
+          margin-left: 7vw;
+          user-select: none;
+
+          font-size: 16vw;
+          text-align: center;
+          line-height: 23vw;
+        }
+        #picture {
+          height: 33vh;
+          position: fixed;
+          transform: scaleX(-1);
+          bottom: -2vh;
+          left: -3vw;
+        }
+      }
     </style>
 
-    <audio id="audio1" src="bubbles.mp3"></audio>
-    <audio id="audio2" src="clay.mp3"></audio>
-    <audio id="audio3" src="confetti.mp3"></audio>
-    <audio id="audio4" src="glimmer.mp3"></audio>
-    <audio id="audio5" src="moon.mp3"></audio>
-    <audio id="audio6" src="ufo.mp3"></audio>
+    <audio id="audio1" src="arnold-afraid.mp3"></audio>
+    <audio id="audio2" src="arnold-mars.mp3"></audio>
+    <audio id="audio3" src="arnold-police.mp3"></audio>
+    <audio id="audio4" src="arnold-relax.mp3"></audio>
+    <audio id="audio5" src="arnold-mission.mp3"></audio>
+    <audio id="audio6" src="arnold-questions.mp3"></audio>
+    <audio id="audio7" src="arnold-breakfast.mp3"></audio>
+    <audio id="audio8" src="arnold-clotes.mp3"></audio>
+    <audio id="audio9" src="arnold-mush.mp3"></audio>
   </head>
   <body>
     <div id="app"></div>
@@ -39,6 +166,8 @@
       // model
       let app = document.getElementById('app');
       let buttons = ['', '', '', '', '', '', '', '', ''];
+      let emojis = ['😱', '🪐', '👮', '🧎', '🪂', '❓', '🥪', '🥾', '🏋️'];
+
       // let sounds = ['lyd1', 'lyd2', 'lyd3']
 
       var bubbles = document.getElementById('audio1');
@@ -47,6 +176,10 @@
       var glimmer = document.getElementById('audio4');
       var moon = document.getElementById('audio5');
       var ufo = document.getElementById('audio6');
+      var arnoldBreakfast = document.getElementById('audio7');
+      var arnoldClotes = document.getElementById('audio8');
+      var arnoldMush = document.getElementById('audio9');
+      let currentAudio = bubbles;
 
       let clickedNr;
 
@@ -54,12 +187,19 @@
       updateView();
       function updateView() {
         html = '';
+        html += "<div id='ytterkant'>";
+        html += "<div id='headline'>Let's do it the</br></div>";
+        html += "<div id='headline2'>Arnold Way</div>";
         for (let i = 0; i < buttons.length; i++) {
           let firstInRow = i % 3 == 0 ? 'firstInRow' : '';
 
-          html += `<div class="buttons ${firstInRow}" onclick="klikker(${i})"></div>`;
+          html += `<div class="buttons ${firstInRow}" onclick="klikker(${i})">${emojis[i]}</div>`;
           console.log(i);
         }
+        html += "<div id='bottomline'>Click on Icon or use Keypad</div>";
+        html +=
+          '<img id="picture" src="arnold-draw2.png" width="auto" height="auto">';
+        html += '</div>';
       }
       app.innerHTML = html;
 
@@ -67,23 +207,52 @@
 
       //Trykke på numpad for å aktivere lyd
       document.addEventListener('keydown', (event) => {
+        //stop hvis noe spiller fra før!
+        currentAudio.pause();
         if (event.key == '7') {
+          bubbles.currentTime = 0;
           bubbles.play();
+          currentAudio = bubbles;
         }
         if (event.key == '8') {
+          clay.currentTime = 0;
           clay.play();
+          currentAudio = clay;
         }
         if (event.key == '9') {
+          confetti.currentTime = 0;
           confetti.play();
+          currentAudio = confetti;
         }
         if (event.key == '4') {
+          glimmer.currentTime = 0;
           glimmer.play();
+          currentAudio = glimmer;
         }
         if (event.key == '5') {
+          moon.currentTime = 0;
           moon.play();
+          currentAudio = moon;
         }
         if (event.key == '6') {
+          ufo.currentTime = 0;
           ufo.play();
+          currentAudio = ufo;
+        }
+        if (event.key == '1') {
+          arnoldBreakfast.currentTime = 0;
+          arnoldBreakfast.play();
+          currentAudio = arnoldBreakfast;
+        }
+        if (event.key == '2') {
+          arnoldClotes.currentTime = 0;
+          arnoldClotes.play();
+          currentAudio = arnoldClotes;
+        }
+        if (event.key == '3') {
+          arnoldMush.currentTime = 0;
+          arnoldMush.play();
+          currentAudio = arnoldMush;
         }
         //trenger 3 til eller bruke de samme.
       });
@@ -92,24 +261,52 @@
       function klikker(nummer) {
         clickedNr = nummer;
         //console.log(clickedNr)
+        currentAudio.pause();
 
         if (clickedNr == 0) {
+          bubbles.currentTime = 0;
           bubbles.play();
+          currentAudio = bubbles;
         }
         if (clickedNr == 1) {
+          clay.currentTime = 0;
           clay.play();
+          currentAudio = clay;
         }
         if (clickedNr == 2) {
+          confetti.currentTime = 0;
           confetti.play();
+          currentAudio = confetti;
         }
         if (clickedNr == 3) {
-          clay.play();
+          glimmer.currentTime = 0;
+          glimmer.play();
+          currentAudio = glimmer;
         }
         if (clickedNr == 4) {
-          clay.play();
+          moon.currentTime = 0;
+          moon.play();
+          currentAudio = moon;
         }
         if (clickedNr == 5) {
-          clay.play();
+          ufo.currentTime = 0;
+          ufo.play();
+          currentAudio = ufo;
+        }
+        if (clickedNr == 6) {
+          arnoldBreakfast.currentTime = 0;
+          arnoldBreakfast.play();
+          currentAudio = arnoldBreakfast;
+        }
+        if (clickedNr == 7) {
+          arnoldClotes.currentTime = 0;
+          arnoldClotes.play();
+          currentAudio = arnoldClotes;
+        }
+        if (clickedNr == 8) {
+          arnoldMush.currentTime = 0;
+          arnoldMush.play();
+          currentAudio = arnoldMush;
         }
 
         /*
