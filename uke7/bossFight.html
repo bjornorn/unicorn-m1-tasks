@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #playerDiv {
+      }
+
+      #computerDiv {
+      }
+    </style>
+  </head>
+  <body>
+    <div id="game"></div>
+    <script>
+      //model
+      let gameDiv = document.getElementById('game');
+      var player = { type: 'player', health: '1200', attack: '10' };
+      var computer = { type: 'cpu', health: '500', attack: '10' };
+
+      //view
+      view();
+      function view() {
+        let html = '';
+        html +=
+          `<div id="playerDiv" >Player health: ` + player.health + `</div>`;
+        html +=
+          `<div id="computerDiv" >Computer health: ` +
+          computer.health +
+          `</div>`;
+
+        gameDiv.innerHTML = html;
+      }
+
+      //controller
+    </script>
+  </body>
+</html>

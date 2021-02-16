@@ -1,0 +1,5 @@
+prøve å lage et object for spiller og et object for cpu
+lage bane med bakgrunn (2d figher spill style)
+lage helthbar for player og cpu
+lage bilder for passiv, angrep, treff, bom og seier 
+
