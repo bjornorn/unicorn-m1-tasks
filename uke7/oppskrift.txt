@@ -1,5 +1,17 @@
+FERDIG-ISJ
 prøve å lage et object for spiller og et object for cpu
-lage bane med bakgrunn (2d figher spill style)
+Lage 6 DIV'er: Player, computer, floor, background, platerHealtBar, computerHealthbar
 lage helthbar for player og cpu
+player og boss skal ha tre angrep hver som gir forskjellig skade
+WinnerMessage - gi beskjed om hvem som vant og stopp spillet
+
+VI JOBBER MED
+Restart button
+Health-barer som synker etterhvert som livene synker
+musepeker må bli til et sikte 
+
+I FREMTIDEN
 lage bilder for passiv, angrep, treff, bom og seier 
+function playerIsAttacking() - fikse så funksjonen ikke kan kjøre flere ganger før runda er ferdig
+Animasjon
 

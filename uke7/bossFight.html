@@ -4,33 +4,50 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="bossFight.css" />
+    <script src="bossFight.js"></script>
     <title>Document</title>
-    <style>
-      #playerDiv {
-      }
-
-      #computerDiv {
-      }
-    </style>
   </head>
   <body>
     <div id="game"></div>
     <script>
       //model
+      let attackNumber;
       let gameDiv = document.getElementById('game');
-      var player = { type: 'player', health: '1200', attack: '10' };
-      var computer = { type: 'cpu', health: '500', attack: '10' };
+      let winner = null;
+      let winnerMessage = '';
+      let restartButton = '';
+      var player = {
+        name: 'Player',
+        health: 100,
+        attack: [10, 20, 30],
+      };
+
+      var computer = {
+        name: 'Computer',
+        health: 100,
+        attack: [10, 20, 30],
+      };
 
       //view
       view();
       function view() {
-        let html = '';
-        html +=
-          `<div id="playerDiv" >Player health: ` + player.health + `</div>`;
-        html +=
-          `<div id="computerDiv" >Computer health: ` +
+        let winnerIndex = winner == null ? 'onclick="playerIsAttacking()' : '';
+        let html =
+          `
+        <div id="playerHealthBar">Player health:` +
+          player.health +
+          `</div>
+        <div id="computerHealthBar">Boss health:` +
           computer.health +
-          `</div>`;
+          `</div>  
+        <div id="winnerMessage"> ${winnerMessage} </div>       
+        <div id="restartButton"> ${restartButton} </div>       
+          <div id="background"></div>
+          <div id="floor"></div>
+          <div id="player"></div>
+          <div id="computer" ${winnerIndex}"></div>
+          `;
 
         gameDiv.innerHTML = html;
       }
