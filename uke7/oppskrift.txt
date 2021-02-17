@@ -4,14 +4,28 @@ Lage 6 DIV'er: Player, computer, floor, background, platerHealtBar, computerHeal
 lage helthbar for player og cpu
 player og boss skal ha tre angrep hver som gir forskjellig skade
 WinnerMessage - gi beskjed om hvem som vant og stopp spillet
+Restart button
+BUG: Player health vokser
 
 VI JOBBER MED
-Restart button
-Health-barer som synker etterhvert som livene synker
+Health-barer som synker etterhvert som livene synker 
+    https://www.w3schools.com/tags/tag_progress.asp
+    <progress id="health" value="100" max="100"></progress>
+
 musepeker må bli til et sikte 
+    https://www.w3schools.com/cssref/pr_class_cursor.asp
+    har lagt til cursor css under body, trenger å finne et bilde som er 128x128px og må være sentrert riktig.
+    Må også endre gun-pointer.png.. ser ikke ut som jeg kan legge det inn.
 
 I FREMTIDEN
 lage bilder for passiv, angrep, treff, bom og seier 
 function playerIsAttacking() - fikse så funksjonen ikke kan kjøre flere ganger før runda er ferdig
 Animasjon
 
+MÅ LAGE 
+gun pointer cursor pixel art
+game title(bakgrunnsbilde)
+skrift for winner pixel art 
+design av chars 
+design av bakgrunn 
+design av bakke 

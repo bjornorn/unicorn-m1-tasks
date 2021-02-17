@@ -16,33 +16,41 @@
       let gameDiv = document.getElementById('game');
       let winner = null;
       let winnerMessage = '';
-      let restartButton = '';
+      let restartButton = null;
+      let restartMessage = '';
       var player = {
         name: 'Player',
+        startHealth: 100,
         health: 100,
-        attack: [10, 20, 30],
+        attack: [5, 10, 10, 20]
       };
 
       var computer = {
         name: 'Computer',
+        startHealth: 100,
         health: 100,
-        attack: [10, 20, 30],
+        attack: [10, 20, 30, 0]
       };
 
       //view
       view();
       function view() {
         let winnerIndex = winner == null ? 'onclick="playerIsAttacking()' : '';
+        // let restartIndex = restartMessage == null ? '' : '';
         let html =
           `
-        <div id="playerHealthBar">Player health:` +
-          player.health +
-          `</div>
-        <div id="computerHealthBar">Boss health:` +
-          computer.health +
-          `</div>  
-        <div id="winnerMessage"> ${winnerMessage} </div>       
-        <div id="restartButton"> ${restartButton} </div>       
+          <label id="playerHealthBar2"> Player health: ${player.health} </label>
+          <div id="playerHealthBarFrame"><progress id="playerHealthBar" max="${player.startHealth}" value="${player.health}"> 
+          Player health:` +  player.health + //Ser ikke ut som tekst inni healthbar ikke fungerer?
+          `</progress></div>
+          
+          <label id="computerHealthBar2"> Computer health:${computer.health} </label>
+          <progress id="computerHealthBar" max="${computer.startHealth}" value="${computer.health}">
+          Computer health:` + computer.health + //Ser ikke ut som tekst inni healthbar ikke fungerer?
+          `</progress> 
+
+          <div id="winnerMessage"> ${winnerMessage} </div>       
+          <div id="restartButton" onclick="restart()"> ${restartMessage} </div>       
           <div id="background"></div>
           <div id="floor"></div>
           <div id="player"></div>

@@ -1,5 +1,7 @@
 body {
-  margin: 0;
+  margin: 0;  
+  cursor:crosshair;
+  background-color: rgb(40, 112, 58);
 }
 
 #floor {
@@ -8,6 +10,8 @@ body {
   width: 100vw;
   height: 30vh;
   background-color: blue;
+  /* background-image: url(healthbarframe.png);
+  background-size: 200px 200px; */
 }
 
 #player {
@@ -28,30 +32,62 @@ body {
   position: fixed;
   right: 25vw;
   bottom: 20vh;
+  
 }
 
 #background {
-  background-color: green;
+  /* background-color: green; */
   width: 100vw;
   height: 70vh;
+  background-image: url(pixelBakgrunn.jpg);
+  background-size: 100vw 70vh; 
+  background-repeat: no-repeat;
 }
+
 
 #playerHealthBar {
   font-size: 6vh;
-  color: red;
-  float: left;
-  background-color: black;
-  margin-top: 5vh;
-  margin-left: 5vw;
+  color: red; /* fungerer ikke. finn en løsning..*/
+  position: fixed;
+  width: 40vw;
+  top: 5vh;
+  left: 5vw;
+  margin: 0;
+  /* float: left; */
+  /* background-color: rgb(0, 0, 0); */
+
+} 
+
+#playerHealthBar2 {
+  font-size: 6vh;
+  color: rgb(243, 243, 243); /* fungerer ikke. finn en løsning..*/
+  position: fixed;
+  width: 40vw;
+  top: 5vh;
+  left: 5vw;
+  margin: 0;
+  z-index: 2;
+}
+
+#playerHealthBarFrame {
+  /* background-image: url("healthbarframe.png"); */
+  margin-top: 5vw;
+  position: absolute;
+  top: 120px;
+  background-repeat: no-repeat;
+  background-size: 45vw 3vw;
+
 }
 
 #computerHealthBar {
-  float: right;
-  color: red;
-  background-color: black;
+  /* float: right; */
   font-size: 6vh;
-  margin-top: 5vh;
-  margin-right: 5vw;
+  color: red;
+  position: fixed;
+  width: 40vw;
+  top: 5vh;
+  right: 5vw;
+  margin: 0;
 }
 
 #winnerMessage {
@@ -64,5 +100,19 @@ body {
   width: 50vw;
   margin-left: 25vw;
   margin-right: 25vw;
+  text-align: center;
+}
+
+#restartButton {
+  float: left;
+
+  color: red;
+  background-color: black;
+  font-size: 6vh;
+  margin-top: 1vh;
+  padding: 0 2vw;
+  width: 10vw;
+  margin-left: 43vw;
+  margin-right: 43vw;
   text-align: center;
 }
