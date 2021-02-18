@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="bossFight.css" />
     <script src="bossFight.js"></script>
-    <title>Document</title>
+    <title>Unicorn Vs Covid</title>
   </head>
   <body>
     <div id="game"></div>
@@ -14,46 +14,75 @@
       //model
       let attackNumber;
       let gameDiv = document.getElementById('game');
-      let winner = null;
+      let winner = 'none';
       let winnerMessage = '';
       let restartButton = null;
-      let restartMessage = '';
+      let restartMessage = false;
+      let startButton = null;
+      let startMessage = true;
+      // let computerWinImage = document.getElementById('computerWinImage');
+      let playerWinImage =
+        '<img id="playerWinImage" class="gameInfo" src="playerwins.png">';
+      let computerWinImage =
+        '<img id="computerWinImage" class="gameInfo" src="computerwins.png">';
+      let gameTitleImage =
+        '<img id="gameTitleImage" class="gameInfo" src="gameTitle.png">';
+      let startGameImage =
+        '<img id="startGameImage" class="gameInfo" src="startGame.png">';
+      let restartGameImage =
+        '<img id="restartGameImage" class="gameInfo" src="restartGame.png">';
+
+      //player images
+
+      let playerClass = 'off';
+
       var player = {
         name: 'Player',
         startHealth: 100,
         health: 100,
-        attack: [5, 10, 10, 20]
+        attack: [5, 10, 10, 20],
       };
 
       var computer = {
         name: 'Computer',
         startHealth: 100,
         health: 100,
-        attack: [10, 20, 30, 0]
+        attack: [10, 20, 30, 0],
       };
 
       //view
       view();
       function view() {
         let winnerIndex = winner == null ? 'onclick="playerIsAttacking()' : '';
-        // let restartIndex = restartMessage == null ? '' : '';
+        let playerWinIndex = winner == player.name ? playerWinImage : '';
+        let computerWinIndex = winner == computer.name ? computerWinImage : '';
+        let gameTitleIndex = winner == 'none' ? gameTitleImage : '';
+        let startMessageIndex = startMessage == true ? startGameImage : '';
+        let restartMessageIndex =
+          restartMessage == true ? restartGameImage : '';
+        // player Moving
+        let playerClassIndex =
+          playerClass == 'idle' ? 'playerIdle' : playerClass;
+
+        // draw HTML
         let html =
-          `
-          <label id="playerHealthBar2"> Player health: ${player.health} </label>
-          <div id="playerHealthBarFrame"><progress id="playerHealthBar" max="${player.startHealth}" value="${player.health}"> 
-          Player health:` +  player.health + //Ser ikke ut som tekst inni healthbar ikke fungerer?
+          `<div id="playerHealthBarFrame"></div>
+          <div><progress id="playerHealthBar" max="${player.startHealth}" value="${player.health}"> 
+          Player health:` +
+          player.health +
           `</progress></div>
           
-          <label id="computerHealthBar2"> Computer health:${computer.health} </label>
           <progress id="computerHealthBar" max="${computer.startHealth}" value="${computer.health}">
-          Computer health:` + computer.health + //Ser ikke ut som tekst inni healthbar ikke fungerer?
+          Computer health:` +
+          computer.health +
           `</progress> 
 
-          <div id="winnerMessage"> ${winnerMessage} </div>       
-          <div id="restartButton" onclick="restart()"> ${restartMessage} </div>       
+          <div id="winnerMessage"> ${playerWinIndex} ${computerWinIndex} ${gameTitleIndex}</div>
+          <div id="startButton" class="startGame" onclick="startGame()"> ${startMessageIndex} </div>    
+          <div id="restartButton" onclick="restart()"> ${restartMessageIndex} </div>       
           <div id="background"></div>
           <div id="floor"></div>
-          <div id="player"></div>
+          <div id="player" class="${playerClassIndex}"></div>
           <div id="computer" ${winnerIndex}"></div>
           `;
 
