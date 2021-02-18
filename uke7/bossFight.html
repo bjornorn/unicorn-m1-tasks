@@ -34,7 +34,7 @@
 
       //player images
 
-      let playerClass = 'off';
+      let playerClass = 'idle';
 
       var player = {
         name: 'Player',
@@ -61,8 +61,7 @@
         let restartMessageIndex =
           restartMessage == true ? restartGameImage : '';
         // player Moving
-        let playerClassIndex =
-          playerClass == 'idle' ? 'playerIdle' : playerClass;
+        let playerClassIndex = playerClass == 'idle' ? 'playerIdle' : 'playerFiring';
 
         // draw HTML
         let html =

@@ -1,6 +1,6 @@
 function attackChoice() {
   attackNumber = Math.floor(Math.random() * 4);
-  console.log('attack ' + attackNumber);
+  // console.log('attack ' + attackNumber);
 }
 
 function playerIsAttacking() {
@@ -8,6 +8,7 @@ function playerIsAttacking() {
   winner = 'unknown';
   attackChoice();
   view();
+  console.log(playerClass)
   setTimeout(computerIsAttacking, 600);
 }
 // computerIsAttacking();
@@ -23,11 +24,11 @@ function computerIsAttacking() {
     theWinnerIs();
   }
   view();
-  fightersIsResting();
+  setTimeout(fightersIsResting, 600);
 }
 
 function fightersIsResting() {
-  playerClass = 'playerIdle';
+  playerClass = 'idle';
   winner = null;
   view();
 }
