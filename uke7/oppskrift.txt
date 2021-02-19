@@ -20,26 +20,22 @@ FERDIG-ISJ
 * vise spill logo når spill er slutt
 * design av boss char - passiv og angrep
 * design av boss char - victory
+* still timere i angreps funksjoner (1200 + 560)
 
 
-VI JOBBER MED
+VI ØNSKER
 
 * fikse mobil view - kun landscape???
-* 
+* skytelyder
+* Seiers musikk
+* hemmelig jukseknapp
+* disable music - knapp
+
 
 I FREMTIDEN
 
-* healthbar - style
-
-HELT TIL SLUTT
-* still timere i angreps funksjoner
-
-MÅ LAGE 
+* healthbar - bedre style
 
 
-
-<label id="playerHealthBar2"> Player health: ${player.health} </label>
-<label id="computerHealthBar2"> Computer health:${computer.health} </label>
-${playerWinImage}
 
 
