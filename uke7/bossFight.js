@@ -74,7 +74,7 @@ function startGame() {
 
 function restart() {
   // winnerMessage = '';
-  // restartMessage = '';
+  restartMessage = '';
   playerClass = 'playerIdle';
   player.health = player.startHealth;
   computer.health = computer.startHealth;
