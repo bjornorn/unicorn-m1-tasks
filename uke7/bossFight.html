@@ -7,6 +7,14 @@
     <link rel="stylesheet" href="bossFight.css" />
     <script src="bossFight.js"></script>
     <title>Unicorn Vs Covid</title>
+
+   
+    <audio id="audioGameTheme" src="audioGameTheme.mp3" type="audio/mpeg"> </audio>
+    <!-- 
+    <audio id="playerVictory" src="audioPlayerVictory.mp3" type="audio/mpeg"> </audio>   
+    -->
+
+
   </head>
   <body>
     <div id="game"></div>
@@ -14,8 +22,7 @@
       //model
       let attackNumber;
       let gameDiv = document.getElementById('game');
-      let winner = 'none';
-      let winnerMessage = '';
+      let winner = 'none';      
       let restartButton = null;
       let restartMessage = false;
       let startButton = null;
@@ -26,15 +33,21 @@
       let computerWinImage =
         '<img id="computerWinImage" class="gameInfo" src="computerwins.png">';
       let gameTitleImage =
-        '<img id="gameTitleImage" class="gameInfo" src="gameTitle.png">';
+        '<img id="gameTitleImage" class="gameInfo" src="gameTitle2.gif">';
       let startGameImage =
         '<img id="startGameImage" class="gameInfo" src="startGame.png">';
       let restartGameImage =
         '<img id="restartGameImage" class="gameInfo" src="restartGame.png">';
+      let gameTitle = 'yes';
+      let allowAttack = 'no';
 
       //player images
 
-      let playerClass = 'idle';
+      let playerClass = 'playerIdle';
+      let computerClass = 'computerIdle';
+
+      //audio
+      var gameThemeAudio = document.getElementById('audioGameTheme');
 
       var player = {
         name: 'Player',
@@ -52,16 +65,17 @@
 
       //view
       view();
+      gameTheme();
       function view() {
-        let winnerIndex = winner == null ? 'onclick="playerIsAttacking()' : '';
+        let winnerIndex = allowAttack == 'yes' ? 'onclick="playerIsAttacking()"' : '';
         let playerWinIndex = winner == player.name ? playerWinImage : '';
         let computerWinIndex = winner == computer.name ? computerWinImage : '';
-        let gameTitleIndex = winner == 'none' ? gameTitleImage : '';
+        let gameTitleIndex = gameTitle == 'yes' ? gameTitleImage : '';
         let startMessageIndex = startMessage == true ? startGameImage : '';
-        let restartMessageIndex =
-          restartMessage == true ? restartGameImage : '';
+        let restartMessageIndex = restartMessage == true ? restartGameImage : '';
         // player Moving
-        let playerClassIndex = playerClass == 'idle' ? 'playerIdle' : 'playerFiring';
+        // let playerClassIndex = playerClass == 'idle' ? 'playerIdle' : 'playerFiring';
+        // let computerClassIndex = computerClass == 'idle' ? 'computerIdle' : 'computerFiring';
 
         // draw HTML
         let html =
@@ -76,13 +90,14 @@
           computer.health +
           `</progress> 
 
-          <div id="winnerMessage"> ${playerWinIndex} ${computerWinIndex} ${gameTitleIndex}</div>
+          <div id="gameTitle"> ${gameTitleIndex}</div>
           <div id="startButton" class="startGame" onclick="startGame()"> ${startMessageIndex} </div>    
           <div id="restartButton" onclick="restart()"> ${restartMessageIndex} </div>       
+          <div id="winnerDiv"> ${playerWinIndex} ${computerWinIndex} </div>       
           <div id="background"></div>
           <div id="floor"></div>
-          <div id="player" class="${playerClassIndex}"></div>
-          <div id="computer" ${winnerIndex}"></div>
+          <div id="player" class="${playerClass}"></div>
+          <div id="computer" class="${computerClass}" ${winnerIndex}></div>
           `;
 
         gameDiv.innerHTML = html;

@@ -16,17 +16,23 @@ FERDIG-ISJ
 * skrift for winner pixel art 
 * function playerIsAttacking() - fikse så funksjonen ikke kan kjøre flere ganger før runda er ferdig
 * game title(bakgrunnsbilde)
+* fikse skyteanimasjon når siden er online
+* vise spill logo når spill er slutt
+* design av boss char - passiv og angrep
 
 VI JOBBER MED
-fikse skyteanimasjon når siden er online
+* design av boss char - victory
+* fikse mobil view - kun landscape???
+* 
 
 I FREMTIDEN
-* lage bilder for passiv, angrep, treff, bom og seier 
+
 * healthbar - style
-* Animasjon
+
+HELT TIL SLUTT
+* still timere i angreps funksjoner
 
 MÅ LAGE 
-* design av chars 
 
 
 

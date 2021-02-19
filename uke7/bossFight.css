@@ -19,32 +19,69 @@ body {
 
 #player {
   /* background-color: blanchedalmond; */
-  height: 40vh;
+  height: 20vw;
   width: 50vw;
+  border: orange 3px solid;
   position: fixed;
-  left: 10vw;
-  bottom: 5vh;
+  left: 22vw;
+  bottom: 1vh;
 }
 .playerIdle {
-  background-image: url(playerIdleGif.gif);
+  background-image: url(playerIdleGif.gif);  
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
+  background-position: bottom;
+  
 }
 
 .playerFiring {
   background-image: url(playerFiringLoop2.gif);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
+  background-position: bottom;
+}
+
+.playerVictory {
+  background-image: url(playerVictoryGifLoop.gif);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom;
+}
+
+.computerVictory {
+background-image: url(computerVictoryLoop.gif);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom;
 }
 
 #computer {
-  background-color: blanchedalmond;
-  height: 30vh;
-  width: 10vh;
-  float: right;
+height: 18vw;
+  width: 65vw;
+  border: greenyellow 3px solid;
+
+  /* background-color: blanchedalmond; */
+  
   position: fixed;
-  right: 25vw;
+  left: 23vw;
   bottom: 5vh;
+  /* float: left; */
+}
+
+.computerIdle {
+  
+  background-image: url(covidBossIdle.gif);  
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+
+}
+.computerFiring {
+  background-image: url(covidBossAttack.gif);  
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+
 }
 
 #background {
@@ -77,14 +114,14 @@ progress::-webkit-progress-value {
   transform: scaleX(-1);
 }
 
-#playerHealthBarFrame {
-  background-image: url('healthbarframe.png');
+/* #playerHealthBarFrame {
+  background-image: url('healthbarframe.pnug');
   margin-top: 5vw;
   position: fixed;
   top: 120px;
   background-repeat: no-repeat;
   background-size: 45vw 3vw;
-}
+} */
 
 #computerHealthBar {
   /* float: right; */
@@ -98,21 +135,28 @@ progress::-webkit-progress-value {
   background-color: black;
 }
 
-#winnerMessage {
+#gameTitle {
   float: left;
   /* color: red; */
   /* background-color: rgb(255, 255, 255); */
   font-size: 6vh;
-  margin-top: 13vh;
+  margin-top: 9vh;
   width: 50vw;
   margin-left: 25vw;
   margin-right: 25vw;
-  text-align: center;
+ 
 }
 
 .gameInfo {
   width: 100%;
   height: auto;
+}
+
+#winnerDiv {
+  width: 60vw;
+  margin-left: 20vw;
+  margin-top: 1vh;
+  float: left;
 }
 
 #restartButton {
@@ -121,7 +165,7 @@ progress::-webkit-progress-value {
   width: 10vw;
   margin-left: 43vw;
   margin-right: 43vw;
-  text-align: center;
+  text-align: center;  
 }
 
 .startGame {
