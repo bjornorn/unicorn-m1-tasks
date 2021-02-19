@@ -21,7 +21,7 @@ body {
   /* background-color: blanchedalmond; */
   height: 20vw;
   width: 50vw;
-  border: orange 3px solid;
+  /* border: orange 3px solid; */
   position: fixed;
   left: 22vw;
   bottom: 1vh;
@@ -58,7 +58,7 @@ background-image: url(computerVictoryLoop.gif);
 #computer {
 height: 18vw;
   width: 65vw;
-  border: greenyellow 3px solid;
+  /* border: greenyellow 3px solid; */
 
   /* background-color: blanchedalmond; */
   

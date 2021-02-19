@@ -86,6 +86,7 @@ function restart() {
 }
 
 function gameTheme() {
+  gameThemeAudio.volume = 0.5;
   gameThemeAudio.play(); 
   
   
