@@ -32,7 +32,7 @@ body {
 }
 
 .playerFiring {
-  background-image: url(playerFiringGifLoop2.gif);
+  background-image: url(playerFiringLoop2.gif);
   background-repeat: no-repeat;
   background-size: cover;
 }

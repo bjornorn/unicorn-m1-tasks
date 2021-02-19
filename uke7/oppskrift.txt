@@ -18,7 +18,7 @@ FERDIG-ISJ
 * game title(bakgrunnsbilde)
 
 VI JOBBER MED
-
+fikse skyteanimasjon når siden er online
 
 I FREMTIDEN
 * lage bilder for passiv, angrep, treff, bom og seier 
