@@ -64,6 +64,7 @@ function theWinnerIs() {
 }
 
 function startGame() {
+  gameTheme();
   startMessage = false;
   playerClass = 'playerIdle';
   computerClass = 'computerIdle';

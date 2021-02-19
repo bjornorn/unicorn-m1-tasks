@@ -19,9 +19,11 @@ FERDIG-ISJ
 * fikse skyteanimasjon når siden er online
 * vise spill logo når spill er slutt
 * design av boss char - passiv og angrep
+* design av boss char - victory
+
 
 VI JOBBER MED
-* design av boss char - victory
+
 * fikse mobil view - kun landscape???
 * 
 
