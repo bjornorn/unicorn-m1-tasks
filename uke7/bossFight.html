@@ -41,6 +41,7 @@
       let allowAttack = 'no';
       let playerSpeech = '';
       let computerSpeech = '';
+      let musicOnOrOff = 'musicOn';
 
       //player images
       let playerClass = 'playerIdle';
@@ -52,6 +53,17 @@
       var computerAttackSound = document.getElementById('computerAttackSound');
       var audioPlayerVictory2 = document.getElementById('audioPlayerVictory2');
       var computerVictorySound = document.getElementById('audioComputerVictory');
+      
+      gameThemeAudio.muted = false;
+      playerAttackSound.muted = false;
+      computerAttackSound.muted = false;
+      audioPlayerVictory2.muted = false;
+      computerVictorySound.muted = false;
+
+      let musicFiles = [gameThemeAudio, audioPlayerVictory2, computerVictorySound];
+      let audioEffects = [playerAttackSound, computerAttackSound];
+
+      
 
       var player = {
         name: 'Player',
@@ -80,6 +92,8 @@
         //draw HTML
         let html =
           `
+          <div onclick="muteMusic()" class="${musicOnOrOff}"> </div>
+
           <div id="jukseKnapp" onclick="jukseKnapp()"></div>
           <div><progress id="playerHealthBar" max="${player.startHealth}" value="${player.health}"> 
           Player health:` +

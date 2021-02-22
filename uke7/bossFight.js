@@ -104,3 +104,23 @@ function jukseKnapp() {
   playerSpeech = 'playerSpeech';
   view();
 }
+
+function muteMusic() {
+ if (gameThemeAudio.muted == false)
+    {gameThemeAudio.muted = true;
+      audioPlayerVictory2.muted = true;
+      computerVictorySound.muted = true;
+      playerAttackSound.muted = true
+      computerAttackSound.muted = true;
+      musicOnOrOff = 'musicOff';
+    }
+   else if (gameThemeAudio.muted == true)
+    {gameThemeAudio.muted = false;
+      audioPlayerVictory2.muted = false;
+      computerVictorySound.muted = false;
+      playerAttackSound.muted = false;
+      computerAttackSound.muted = false;
+      musicOnOrOff = 'musicOn';
+    }  
+    view();
+}

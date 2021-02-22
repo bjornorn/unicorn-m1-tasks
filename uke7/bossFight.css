@@ -210,3 +210,28 @@ progress::-webkit-progress-value {
   left: 49vw;
 }
 
+.musicOn {
+  width: 3vw;
+  height: 3vw;
+  position: fixed;
+  top: 93vh;
+  left: 1vw;
+  background-image: url(soundon.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 2;
+}
+
+.musicOff {
+  width: 3vw;
+  height: 3vw;
+  position: fixed;
+  top: 93vh;
+  left: 1vw;
+  background-image: url(soundoff.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 2;
+}
