@@ -97,6 +97,7 @@ function gameTheme() {
   gameThemeAudio.currentTime = 0;
   gameThemeAudio.volume = 0.3;
   gameThemeAudio.play();
+  gameThemeAudio.loop = true;
 }
 
 function jukseKnapp() {
