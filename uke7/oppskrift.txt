@@ -26,14 +26,20 @@ FERDIG-ISJ
 * hemmelig jukseknapp
 * Seiers musikk - computer
 * player - snakkeboble med juks
-
-VI ØNSKER
-
-
-
-
-I FREMTIDEN
 * disable music - knapp
+
+FERDIG :)
+
+PRESENTASJON:
+* Animasjoner er Gif filer
+* Dina har laget mesteparten av tegningene
+* Bjørn har laget mesteparten av funksjonene
+* Agith har vært "all over the place" og bidratt der det trengs
+
+* Mute funksjon
+* Jukse funksjon
+* Har jobbet aktivt med oppskrift (pseudo-koding)
+* "Player" og "Computer" er laget som objekter
 
 
 

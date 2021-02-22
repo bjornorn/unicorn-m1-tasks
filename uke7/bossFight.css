@@ -214,7 +214,7 @@ progress::-webkit-progress-value {
   width: 3vw;
   height: 3vw;
   position: fixed;
-  top: 93vh;
+  top: 92vh;
   left: 1vw;
   background-image: url(soundon.png);
   background-position: center center;
@@ -227,7 +227,7 @@ progress::-webkit-progress-value {
   width: 3vw;
   height: 3vw;
   position: fixed;
-  top: 93vh;
+  top: 92vh;
   left: 1vw;
   background-image: url(soundoff.png);
   background-position: center center;
