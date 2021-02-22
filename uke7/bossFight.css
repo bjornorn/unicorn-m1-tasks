@@ -11,17 +11,35 @@ body {
   height: 15vh;
   background-color: blue;
   background-image: url(woodFloor.jpg);
-  /* background-repeat: no-repeat; */
-  /* background-size: cover;   */
-  /* background-image: url(healthbarframe.png);
-  background-size: 200px 200px; */
 }
 
+.playerSpeech {
+  position: fixed;
+  left: 23vw;
+  bottom: 13vw;
+  height: 10vw;
+  width: 23vw;
+  background-image: url(playertalk.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.computerSpeech {
+  position: fixed;
+  left: 73vw;
+  bottom: 38vh;
+  height: 6vw;
+  width: 40vw;
+  background-image: url(computertalk1.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+
+
 #player {
-  /* background-color: blanchedalmond; */
   height: 20vw;
   width: 50vw;
-  /* border: orange 3px solid; */
   position: fixed;
   left: 22vw;
   bottom: 1vh;
@@ -58,14 +76,9 @@ background-image: url(computerVictoryLoop.gif);
 #computer {
 height: 18vw;
   width: 65vw;
-  /* border: greenyellow 3px solid; */
-
-  /* background-color: blanchedalmond; */
-  
   position: fixed;
   left: 23vw;
   bottom: 5vh;
-  /* float: left; */
 }
 
 .computerIdle {
@@ -74,20 +87,20 @@ height: 18vw;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-
 }
 .computerFiring {
   background-image: url(covidBossAttack.gif);  
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-
 }
 
 #background {
-  /* background-color: green; */
   width: 100vw;
   height: 85vh;
+  position: fixed; 
+  z-index: -10;
+ 
   background-image: url(pixelBakgrunn2.jpg);
   background-position: center center;
   background-repeat: no-repeat;
@@ -95,37 +108,38 @@ height: 18vw;
   width: 100%;
   height: 85vh;
   resize: both;
-  /* transform: scale(0.9); */
 }
 
 progress::-webkit-progress-value {
   background: rgb(238, 47, 47);
 }
+
 #playerHealthBar {
-  font-size: 4vh;
-  color: red; /* fungerer ikke. finn en løsning..*/
+  font-size: 3vh;
   position: fixed;
   width: 40vw;
   top: 5vh;
   left: 5vw;
   margin: 0;
-  /* float: left; */
   background-color: black;
   transform: scaleX(-1);
 }
 
-/* #playerHealthBarFrame {
-  background-image: url('healthbarframe.pnug');
-  margin-top: 5vw;
-  position: fixed;
-  top: 120px;
-  background-repeat: no-repeat;
-  background-size: 45vw 3vw;
-} */
+ #playerHealthBarFrame {
+  display: inline-block;
+    width: 40vw;
+    height: 1.5vw;
+    z-index: 2;
+    position: fixed;
+    width: 40vw;
+    top: 5vh;
+    left: 5vw;
+    border: 3px solid #ffffff;
+    box-shadow: inset 0 0 0 3px #e6a0a0;
+} 
 
 #computerHealthBar {
-  /* float: right; */
-  font-size: 4vh;
+  font-size: 3vh;
   color: red;
   position: fixed;
   width: 40vw;
@@ -135,16 +149,26 @@ progress::-webkit-progress-value {
   background-color: black;
 }
 
+#computerHealthBarFrame {
+  display: inline-block;
+    width: 40vw;
+    height: 1.5vw;
+    z-index: 2;
+    position: fixed;
+    width: 40vw;
+    top: 5vh;
+    right: 5vw;
+    border: 3px solid #ffffff;
+    box-shadow: inset 0 0 0 3px #e6a0a0;
+} 
+
 #gameTitle {
   float: left;
-  /* color: red; */
-  /* background-color: rgb(255, 255, 255); */
   font-size: 6vh;
   margin-top: 9vh;
   width: 50vw;
   margin-left: 25vw;
   margin-right: 25vw;
- 
 }
 
 .gameInfo {
@@ -161,7 +185,7 @@ progress::-webkit-progress-value {
 
 #restartButton {
   float: left;
-  margin-top: 1vh;
+  /* margin-top: 1vh; */
   width: 10vw;
   margin-left: 43vw;
   margin-right: 43vw;
@@ -176,3 +200,13 @@ progress::-webkit-progress-value {
   margin-right: 38vw;
   text-align: center;
 }
+
+#jukseKnapp {  
+  background-color: rgba(0, 0, 0, 0);
+  width: 2vw;
+  height: 5vw;
+  position: fixed;
+  top: 9vh;
+  left: 49vw;
+}
+

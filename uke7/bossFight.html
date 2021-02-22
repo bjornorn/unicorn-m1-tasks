@@ -9,12 +9,11 @@
     <script src="bossFight.js"></script>
     <title>Unicorn Vs Covid</title>
 
-   
-    <audio id="audioGameTheme" src="audioGameTheme.mp3" type="audio/mpeg"> </audio>
-    <!-- 
-    <audio id="playerVictory" src="audioPlayerVictory.mp3" type="audio/mpeg"> </audio>   
-    -->
-
+    <audio id="audioGameTheme" src="audioGameTheme.mp3" type="audio/mpeg"></audio>
+    <audio id="playerAttackSound" src="playerAttackSound.mp3" type="audio/mpeg"></audio>
+    <audio id="computerAttackSound" src="computerAttackSound.mp3" type="audio/mpeg"></audio>
+    <audio id="audioPlayerVictory2" src="audioPlayerVictory2.mp3" type="audio/mpeg"></audio>
+    <audio id="audioComputerVictory" src="audioComputerVictory.mp3" type="audio/mpeg"></audio>
 
   </head>
   <body>
@@ -28,7 +27,6 @@
       let restartMessage = false;
       let startButton = null;
       let startMessage = true;
-      // let computerWinImage = document.getElementById('computerWinImage');
       let playerWinImage =
         '<img id="playerWinImage" class="gameInfo" src="playerwins.png">';
       let computerWinImage =
@@ -41,14 +39,19 @@
         '<img id="restartGameImage" class="gameInfo" src="restartGame.png">';
       let gameTitle = 'yes';
       let allowAttack = 'no';
+      let playerSpeech = '';
+      let computerSpeech = '';
 
       //player images
-
       let playerClass = 'playerIdle';
       let computerClass = 'computerIdle';
 
       //audio
       var gameThemeAudio = document.getElementById('audioGameTheme');
+      var playerAttackSound = document.getElementById('playerAttackSound');
+      var computerAttackSound = document.getElementById('computerAttackSound');
+      var audioPlayerVictory2 = document.getElementById('audioPlayerVictory2');
+      var computerVictorySound = document.getElementById('audioComputerVictory');
 
       var player = {
         name: 'Player',
@@ -73,22 +76,25 @@
         let gameTitleIndex = gameTitle == 'yes' ? gameTitleImage : '';
         let startMessageIndex = startMessage == true ? startGameImage : '';
         let restartMessageIndex = restartMessage == true ? restartGameImage : '';
-        // player Moving
-        // let playerClassIndex = playerClass == 'idle' ? 'playerIdle' : 'playerFiring';
-        // let computerClassIndex = computerClass == 'idle' ? 'computerIdle' : 'computerFiring';
 
-        // draw HTML
+        //draw HTML
         let html =
-          `<div id="playerHealthBarFrame"></div>
+          `
+          <div id="jukseKnapp" onclick="jukseKnapp()"></div>
           <div><progress id="playerHealthBar" max="${player.startHealth}" value="${player.health}"> 
           Player health:` +
           player.health +
-          `</progress></div>
-          
+          `</progress>
+          <div id="playerHealthBarFrame"></div>
+          </div>
+        
+          <div>
           <progress id="computerHealthBar" max="${computer.startHealth}" value="${computer.health}">
           Computer health:` +
           computer.health +
-          `</progress> 
+          `</progress>
+          <div id="computerHealthBarFrame"></div>
+          </div> 
 
           <div id="gameTitle"> ${gameTitleIndex}</div>
           <div id="startButton" class="startGame" onclick="startGame()"> ${startMessageIndex} </div>    
@@ -96,14 +102,14 @@
           <div id="winnerDiv"> ${playerWinIndex} ${computerWinIndex} </div>       
           <div id="background"></div>
           <div id="floor"></div>
+          <div class="${playerSpeech}"></div>
+          <div id="cpuSpeech" class="${computerSpeech}"></div>
           <div id="player" class="${playerClass}"></div>
           <div id="computer" class="${computerClass}" ${winnerIndex}></div>
           `;
 
         gameDiv.innerHTML = html;
       }
-
-      //controller
     </script>
   </body>
 </html>
